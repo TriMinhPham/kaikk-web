@@ -49,7 +49,7 @@ export default function Header({ locale }: { locale: Locale }) {
           </span>
           <Link
             href={`${prefix}/contact`}
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white hover:bg-ink/90"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-hover"
           >
             {t.contact}
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0">
@@ -108,7 +108,7 @@ export default function Header({ locale }: { locale: Locale }) {
             <Link
               href={`${prefix}/contact`}
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-white"
             >
               {t.contact}
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
