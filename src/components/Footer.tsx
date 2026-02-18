@@ -3,47 +3,41 @@ import { content, Locale } from "@/lib/content";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const t = content[locale].footer;
+  const nav = content[locale].nav;
+  const prefix = locale === "en" ? "/en" : "";
 
   return (
-    <footer className="border-t border-gray-border bg-gray-light">
-      <div className="mx-auto max-w-5xl px-6 py-10 text-sm text-gray-sub">
-        <div className="grid gap-6 md:grid-cols-2">
+    <footer className="bg-ink text-white">
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          {/* Left: Logo + info */}
           <div>
-            <p className="mb-2 font-bold text-navy">{t.companyName}</p>
-            <p className="whitespace-pre-line text-xs leading-relaxed">
+            <p className="mb-3 text-lg font-bold">KAI</p>
+            <p className="whitespace-pre-line text-xs leading-relaxed text-white/60">
               {t.address}
             </p>
-            <p className="mt-2 text-xs">{t.representative}</p>
-            <p className="text-xs">{t.capital}</p>
-            <p className="mt-2 text-xs">
-              Email:{" "}
-              <a
-                href={`mailto:${t.email}`}
-                className="text-blue-accent hover:underline"
-              >
+            <p className="mt-2 text-xs text-white/60">
+              <a href={`mailto:${t.email}`} className="hover:text-white">
                 {t.email}
               </a>
             </p>
           </div>
-          <div className="flex flex-col items-start gap-2 text-xs md:items-end">
-            <span className="text-gray-sub">
-              <Link
-                href="/"
-                className={`${locale === "ja" ? "font-bold text-navy" : ""} hover:text-blue-accent`}
-              >
-                JP
-              </Link>
-              {" | "}
-              <Link
-                href="/en"
-                className={`${locale === "en" ? "font-bold text-navy" : ""} hover:text-blue-accent`}
-              >
-                EN
-              </Link>
+
+          {/* Right: Nav links */}
+          <nav className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/60">
+            <Link href={`${prefix}/services`} className="hover:text-white">{nav.services}</Link>
+            <Link href={`${prefix}/process`} className="hover:text-white">{nav.process}</Link>
+            <Link href={`${prefix}/company`} className="hover:text-white">{nav.company}</Link>
+            <Link href={`${prefix}/contact`} className="hover:text-white">{nav.contact}</Link>
+            <span>
+              <Link href="/" className={`${locale === "ja" ? "text-white" : ""} hover:text-white`}>JP</Link>
+              {" / "}
+              <Link href="/en" className={`${locale === "en" ? "text-white" : ""} hover:text-white`}>EN</Link>
             </span>
-          </div>
+          </nav>
         </div>
-        <div className="mt-8 border-t border-gray-border pt-4 text-center text-xs text-gray-sub">
+
+        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/40">
           {t.copyright}
         </div>
       </div>

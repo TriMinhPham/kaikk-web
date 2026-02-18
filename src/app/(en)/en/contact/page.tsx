@@ -9,83 +9,95 @@ export default function ContactPageEn() {
   const t = content.en.contact;
 
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-3xl px-6">
-        <h1 className="mb-10 text-2xl font-bold text-navy">{t.title}</h1>
+    <>
+      {/* Page header */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
+            {t.title}
+          </h1>
+          <p className="text-ink-muted">{t.subtitle}</p>
+        </div>
+      </section>
 
-        <form
-          action={`mailto:info@kaikk.co.jp`}
-          method="POST"
-          encType="text/plain"
-          className="space-y-6"
-        >
-          <div>
-            <label className="mb-1 block text-sm font-medium text-navy">
-              {t.fields.companyName}
-            </label>
-            <input
-              type="text"
-              name="company"
-              required
-              className="w-full rounded border border-gray-border px-4 py-2 text-sm outline-none focus:border-blue-accent"
-            />
+      {/* Contact form */}
+      <section className="pb-20">
+        <div className="mx-auto max-w-xl px-6">
+          <div className="rounded-2xl bg-surface-card p-8">
+            <form
+              action="mailto:info@kaikk.co.jp"
+              method="POST"
+              encType="text/plain"
+              className="space-y-5"
+            >
+              <div>
+                <label className="mb-1.5 block text-sm font-medium">
+                  {t.fields.companyName}
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  required
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium">
+                  {t.fields.contactPerson}
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium">
+                  {t.fields.email}
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium">
+                  {t.fields.message}
+                </label>
+                <textarea
+                  name="message"
+                  rows={6}
+                  required
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full rounded-full bg-primary px-8 py-3 text-sm font-medium text-white hover:bg-primary-hover"
+              >
+                {t.submit}
+              </button>
+            </form>
+
+            <p className="mt-6 text-center text-xs text-ink-muted">
+              Email:{" "}
+              <a
+                href="mailto:info@kaikk.co.jp"
+                className="text-primary hover:underline"
+              >
+                info@kaikk.co.jp
+              </a>
+            </p>
           </div>
-
-          <div>
-            <label className="mb-1 block text-sm font-medium text-navy">
-              {t.fields.contactPerson}
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full rounded border border-gray-border px-4 py-2 text-sm outline-none focus:border-blue-accent"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-sm font-medium text-navy">
-              {t.fields.email}
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full rounded border border-gray-border px-4 py-2 text-sm outline-none focus:border-blue-accent"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-sm font-medium text-navy">
-              {t.fields.message}
-            </label>
-            <textarea
-              name="message"
-              rows={6}
-              required
-              className="w-full rounded border border-gray-border px-4 py-2 text-sm outline-none focus:border-blue-accent"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="rounded bg-blue-accent px-8 py-3 text-sm font-medium text-white hover:bg-blue-muted"
-          >
-            {t.submit}
-          </button>
-        </form>
-
-        <p className="mt-8 text-sm text-gray-sub">{t.note}</p>
-        <p className="mt-2 text-sm text-gray-sub">
-          Email:{" "}
-          <a
-            href="mailto:info@kaikk.co.jp"
-            className="text-blue-accent hover:underline"
-          >
-            info@kaikk.co.jp
-          </a>
-        </p>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

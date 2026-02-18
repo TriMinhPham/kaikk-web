@@ -10,54 +10,62 @@ export default function Header({ locale }: { locale: Locale }) {
   const prefix = locale === "en" ? "/en" : "";
 
   return (
-    <header className="border-b border-gray-border bg-white">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href={prefix || "/"} className="text-lg font-bold text-navy">
-          株式会社KAI
+    <header className="sticky top-0 z-50 border-b border-edge bg-surface/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <Link href={prefix || "/"} className="text-xl font-bold tracking-tight text-ink">
+          KAI
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 text-sm md:flex">
-          <Link href={prefix || "/"} className="hover:text-blue-accent">
-            {t.home}
-          </Link>
-          <Link href={`${prefix}/services`} className="hover:text-blue-accent">
+        <nav className="hidden items-center gap-8 text-sm text-ink-muted md:flex">
+          <Link href={`${prefix}/services`} className="hover:text-ink">
             {t.services}
           </Link>
-          <Link href={`${prefix}/process`} className="hover:text-blue-accent">
+          <Link href={`${prefix}/process`} className="hover:text-ink">
             {t.process}
           </Link>
-          <Link href={`${prefix}/company`} className="hover:text-blue-accent">
+          <Link href={`${prefix}/company`} className="hover:text-ink">
             {t.company}
           </Link>
-          <Link href={`${prefix}/contact`} className="hover:text-blue-accent">
-            {t.contact}
-          </Link>
-          <span className="ml-2 border-l border-gray-border pl-4 text-xs text-gray-sub">
+        </nav>
+
+        {/* Right side */}
+        <div className="hidden items-center gap-4 md:flex">
+          <span className="text-xs text-ink-muted">
             <Link
               href="/"
-              className={`${locale === "ja" ? "font-bold text-navy" : ""} hover:text-blue-accent`}
+              className={`${locale === "ja" ? "font-semibold text-ink" : ""} hover:text-ink`}
             >
               JP
             </Link>
-            {" | "}
+            {" / "}
             <Link
               href="/en"
-              className={`${locale === "en" ? "font-bold text-navy" : ""} hover:text-blue-accent`}
+              className={`${locale === "en" ? "font-semibold text-ink" : ""} hover:text-ink`}
             >
               EN
             </Link>
           </span>
-        </nav>
+          <Link
+            href={`${prefix}/contact`}
+            className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white hover:bg-ink/90"
+          >
+            {t.contact}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0">
+              <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <button
           className="md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="メニュー"
+          aria-label="Menu"
         >
           <svg
-            className="h-6 w-6 text-navy"
+            className="h-6 w-6 text-ink"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -83,57 +91,34 @@ export default function Header({ locale }: { locale: Locale }) {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="border-t border-gray-border bg-white px-6 pb-4 md:hidden">
-          <div className="flex flex-col gap-3 pt-3 text-sm">
-            <Link
-              href={prefix || "/"}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-accent"
-            >
+        <nav className="border-t border-edge bg-surface px-6 pb-6 md:hidden">
+          <div className="flex flex-col gap-4 pt-4 text-sm">
+            <Link href={prefix || "/"} onClick={() => setMenuOpen(false)} className="text-ink-muted hover:text-ink">
               {t.home}
             </Link>
-            <Link
-              href={`${prefix}/services`}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-accent"
-            >
+            <Link href={`${prefix}/services`} onClick={() => setMenuOpen(false)} className="text-ink-muted hover:text-ink">
               {t.services}
             </Link>
-            <Link
-              href={`${prefix}/process`}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-accent"
-            >
+            <Link href={`${prefix}/process`} onClick={() => setMenuOpen(false)} className="text-ink-muted hover:text-ink">
               {t.process}
             </Link>
-            <Link
-              href={`${prefix}/company`}
-              onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-accent"
-            >
+            <Link href={`${prefix}/company`} onClick={() => setMenuOpen(false)} className="text-ink-muted hover:text-ink">
               {t.company}
             </Link>
             <Link
               href={`${prefix}/contact`}
               onClick={() => setMenuOpen(false)}
-              className="hover:text-blue-accent"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-5 py-2 text-sm font-medium text-white"
             >
               {t.contact}
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </Link>
-            <div className="border-t border-gray-border pt-3 text-xs text-gray-sub">
-              <Link
-                href="/"
-                className={`${locale === "ja" ? "font-bold text-navy" : ""}`}
-              >
-                JP
-              </Link>
-              {" | "}
-              <Link
-                href="/en"
-                className={`${locale === "en" ? "font-bold text-navy" : ""}`}
-              >
-                EN
-              </Link>
+            <div className="border-t border-edge pt-4 text-xs text-ink-muted">
+              <Link href="/" className={`${locale === "ja" ? "font-semibold text-ink" : ""}`}>JP</Link>
+              {" / "}
+              <Link href="/en" className={`${locale === "en" ? "font-semibold text-ink" : ""}`}>EN</Link>
             </div>
           </div>
         </nav>

@@ -10,29 +10,33 @@ export const content = {
       contact: "お問い合わせ",
     },
     hero: {
-      headline: "業務に適合したAI・ITシステム開発",
-      sub1: "株式会社KAIは、東京都を拠点とするAI・ITシステム開発会社です。",
-      sub2: "中小企業様向けに、業務自動化およびAIシステムの設計・構築を行っています。",
-      sub3: "PoC（試験導入）から本格開発まで、段階的な導入を支援いたします。",
+      badge: "東京発のAI・IT開発会社",
+      headline: "業務に最適化された\nAI・ITシステム開発",
+      subtitle:
+        "株式会社KAIは、中小企業様向けにAI導入支援・業務自動化システムの設計から構築まで、段階的な導入を支援いたします。",
       cta1: "サービスを見る",
       cta2: "お問い合わせ",
     },
     servicesOverview: {
-      title: "事業内容",
+      title: "KAIにできること",
       items: [
         {
+          icon: "search",
           title: "AI導入支援（PoC）",
           desc: "小規模な試験導入により、AI活用の効果を検証します。",
         },
         {
+          icon: "code",
           title: "業務特化型AIシステム開発",
           desc: "既存業務の効率化を目的としたAI自動化システムを構築します。",
         },
         {
+          icon: "shield",
           title: "運用・保守サポート",
           desc: "導入後の安定運用および継続的な改善を支援します。",
         },
         {
+          icon: "globe",
           title: "Webシステム開発",
           desc: "コーポレートサイトおよび業務用Webアプリケーションの開発。",
         },
@@ -47,6 +51,45 @@ export const content = {
         "補助金活用のご相談対応",
         "英語対応可能",
       ],
+    },
+    process: {
+      title: "導入の流れ",
+      steps: [
+        {
+          num: "1",
+          label: "お問い合わせ",
+          desc: "まずはお気軽にご連絡ください。ご要望やお悩みをお聞かせいただきます。",
+        },
+        {
+          num: "2",
+          label: "ヒアリング",
+          desc: "業務内容や課題を詳しくヒアリングし、最適なソリューションを検討します。",
+        },
+        {
+          num: "3",
+          label: "要件整理・お見積り",
+          desc: "ヒアリング内容をもとに要件を整理し、正式なお見積りを提示いたします。",
+        },
+        {
+          num: "4",
+          label: "PoC（必要に応じて）",
+          desc: "必要に応じてプロトタイプを構築し、効果を検証いたします。",
+        },
+        {
+          num: "5",
+          label: "本格開発",
+          desc: "要件に基づき、システムの設計・開発を進めます。",
+        },
+        {
+          num: "6",
+          label: "納品・運用開始",
+          desc: "テスト完了後に納品し、安定した運用をサポートいたします。",
+        },
+      ],
+    },
+    cta: {
+      headline: "AIで業務を変革し、\nビジネスの可能性を広げましょう。",
+      button: "お問い合わせ",
     },
     services: {
       title: "事業内容",
@@ -83,17 +126,6 @@ export const content = {
       ],
       note: "※費用については、要件定義後に正式なお見積りを提示いたします。詳細な料金表をご希望の場合はお問い合わせください。",
     },
-    process: {
-      title: "導入の流れ",
-      steps: [
-        { num: "1", label: "お問い合わせ" },
-        { num: "2", label: "ヒアリング" },
-        { num: "3", label: "要件整理・お見積り" },
-        { num: "4", label: "PoC（必要に応じて）" },
-        { num: "5", label: "本格開発" },
-        { num: "6", label: "納品・運用開始" },
-      ],
-    },
     company: {
       title: "会社概要",
       rows: [
@@ -116,6 +148,7 @@ export const content = {
     },
     contact: {
       title: "お問い合わせ",
+      subtitle: "まずはお気軽にご相談ください。通常2営業日以内にご返信いたします。",
       fields: {
         companyName: "会社名",
         contactPerson: "ご担当者名",
@@ -144,29 +177,33 @@ export const content = {
       contact: "Contact",
     },
     hero: {
-      headline: "AI & IT Systems Development",
-      sub1: "KAI Inc. is a Tokyo-based IT company providing AI implementation and business automation services for small and medium-sized enterprises.",
-      sub2: "",
-      sub3: "We support staged implementation from Proof of Concept (PoC) to full deployment.",
+      badge: "Tokyo-based AI & IT Development",
+      headline: "AI & IT Systems\nBuilt for Your Business",
+      subtitle:
+        "KAI Inc. provides AI implementation and business automation services for SMEs — from Proof of Concept to full deployment.",
       cta1: "View Services",
       cta2: "Contact Us",
     },
     servicesOverview: {
-      title: "Services Overview",
+      title: "What KAI Does",
       items: [
         {
+          icon: "search",
           title: "AI Introduction (PoC)",
           desc: "Pilot implementation to validate AI applicability.",
         },
         {
+          icon: "code",
           title: "Custom AI Systems",
           desc: "Business-specific automation and AI system development.",
         },
         {
+          icon: "shield",
           title: "Operations & Maintenance",
           desc: "Ongoing monitoring and system optimization.",
         },
         {
+          icon: "globe",
           title: "Web Development",
           desc: "Corporate websites and business web applications.",
         },
@@ -181,6 +218,46 @@ export const content = {
         "Government subsidy consultation support",
         "English support available",
       ],
+    },
+    process: {
+      title: "Project Flow",
+      steps: [
+        {
+          num: "1",
+          label: "Inquiry",
+          desc: "Reach out to us with your requirements and challenges.",
+        },
+        {
+          num: "2",
+          label: "Requirement Discussion",
+          desc: "We conduct a detailed assessment of your business processes and needs.",
+        },
+        {
+          num: "3",
+          label: "Proposal & Quotation",
+          desc: "We compile requirements and provide a formal proposal with pricing.",
+        },
+        {
+          num: "4",
+          label: "PoC (If Required)",
+          desc: "We build a prototype to validate the approach before full investment.",
+        },
+        {
+          num: "5",
+          label: "Full Development",
+          desc: "We design and build the complete system based on agreed requirements.",
+        },
+        {
+          num: "6",
+          label: "Delivery & Operation",
+          desc: "After thorough testing, we deploy and provide ongoing support.",
+        },
+      ],
+    },
+    cta: {
+      headline:
+        "Transform your business with AI\nand unlock new possibilities.",
+      button: "Contact Us",
     },
     services: {
       title: "Services",
@@ -209,17 +286,6 @@ export const content = {
       ],
       note: "Formal quotations are provided after requirement definition.",
     },
-    process: {
-      title: "Project Flow",
-      steps: [
-        { num: "1", label: "Inquiry" },
-        { num: "2", label: "Requirement discussion" },
-        { num: "3", label: "Proposal & quotation" },
-        { num: "4", label: "PoC (if required)" },
-        { num: "5", label: "Full development" },
-        { num: "6", label: "Delivery & operation" },
-      ],
-    },
     company: {
       title: "Company Profile",
       rows: [
@@ -241,6 +307,7 @@ export const content = {
     },
     contact: {
       title: "Contact",
+      subtitle: "Get in touch with us. We typically respond within two business days.",
       fields: {
         companyName: "Company Name",
         contactPerson: "Contact Person",
