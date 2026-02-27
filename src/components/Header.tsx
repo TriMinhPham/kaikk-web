@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { content, Locale } from "@/lib/content";
@@ -13,8 +14,15 @@ export default function Header({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-50 border-b border-edge bg-surface/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href={prefix || "/"} className="text-xl font-bold tracking-tight text-ink">
-          KAI
+        <Link href={prefix || "/"}>
+          <Image
+            src="/kai_logo_header.svg"
+            alt="KAI"
+            width={120}
+            height={54}
+            className="h-10 w-auto dark:invert"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
