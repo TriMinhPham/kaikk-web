@@ -28,12 +28,20 @@ export default function Header({ locale }: { locale: Locale }) {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href={prefix || "/"} className="transition-opacity hover:opacity-70">
+        <Link href={prefix || "/"} className="flex items-center gap-3 transition-opacity hover:opacity-70">
           <Image
-            src="/kai_logo_header.svg"
+            src="/symbol_kai.svg"
+            alt=""
+            width={140}
+            height={40}
+            className="h-10 w-auto dark:invert"
+            priority
+          />
+          <Image
+            src="/wordmark_kai.svg"
             alt="KAI"
-            width={120}
-            height={54}
+            width={60}
+            height={40}
             className="h-10 w-auto dark:invert"
             priority
           />
