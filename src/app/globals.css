@@ -69,3 +69,23 @@ body {
     transform: none;
   }
 }
+
+/* ── Logo mark ── */
+#logoMark line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: butt;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
+}
+#logoMark [data-stick] {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #logoMark [data-stick] {
+    transform: none !important;
+  }
+}
