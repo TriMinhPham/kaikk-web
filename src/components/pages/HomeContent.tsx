@@ -75,14 +75,14 @@ export default function HomeContent({ locale }: { locale: Locale }) {
       </section>
 
       {/* Strengths */}
-      <section className="py-20">
+      <section className="py-6">
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn>
-            <div className="rounded-2xl bg-surface-card p-8 shadow-sm md:p-12">
-              <h2 className="mb-8 text-2xl font-bold tracking-tight md:text-3xl">
+            <div className="rounded-2xl bg-surface-card px-6 py-5 shadow-sm md:px-8 md:py-6">
+              <h2 className="mb-5 text-2xl font-bold tracking-tight md:text-3xl">
                 {t.strengths.title}
               </h2>
-              <ul className="grid gap-4 md:grid-cols-2">
+              <ul className="grid gap-3 md:grid-cols-2">
                 {t.strengths.items.map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-ink-muted">
                     <svg className="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
