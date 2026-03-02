@@ -17,7 +17,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               {t.address}
             </p>
             <p className="mt-2 text-xs text-white/60">
-              <a href={`mailto:${t.email}`} className="hover:text-white">
+              <a href={`mailto:${t.email}`} className="transition-colors hover:text-white">
                 {t.email}
               </a>
             </p>
@@ -25,14 +25,14 @@ export default function Footer({ locale }: { locale: Locale }) {
 
           {/* Right: Nav links */}
           <nav className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/60">
-            <Link href={`${prefix}/services`} className="hover:text-white">{nav.services}</Link>
-            <Link href={`${prefix}/process`} className="hover:text-white">{nav.process}</Link>
-            <Link href={`${prefix}/company`} className="hover:text-white">{nav.company}</Link>
-            <Link href={`${prefix}/contact`} className="hover:text-white">{nav.contact}</Link>
+            <Link href={`${prefix}/services`} className="transition-colors hover:text-white">{nav.services}</Link>
+            <Link href={`${prefix}/process`} className="transition-colors hover:text-white">{nav.process}</Link>
+            <Link href={`${prefix}/company`} className="transition-colors hover:text-white">{nav.company}</Link>
+            <Link href={`${prefix}/contact`} className="transition-colors hover:text-white">{nav.contact}</Link>
             <span>
-              <Link href="/" className={`${locale === "ja" ? "text-white" : ""} hover:text-white`}>JP</Link>
+              <Link href="/" className={`transition-colors ${locale === "ja" ? "text-white" : ""} hover:text-white`}>JP</Link>
               {" / "}
-              <Link href="/en" className={`${locale === "en" ? "text-white" : ""} hover:text-white`}>EN</Link>
+              <Link href="/en" className={`transition-colors ${locale === "en" ? "text-white" : ""} hover:text-white`}>EN</Link>
             </span>
           </nav>
         </div>

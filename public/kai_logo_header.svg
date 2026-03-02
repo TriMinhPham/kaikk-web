@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.75 121.41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        font-family: Arial-BoldMT, Arial;
+        font-size: 73.27px;
+        font-weight: 700;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-4 {
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, 'Kozuka Gothic Pr6N';
+        font-size: 16.28px;
+      }
+    </style>
+  </defs>
+  <g>
+    <g class="cls-2">
+      <text class="cls-3" transform="translate(417.02 69.61)"><tspan x="0" y="0">KAI</tspan></text>
+    </g>
+    <g class="cls-2">
+      <text class="cls-4" transform="translate(420.14 95.66)"><tspan x="0" y="0">株式会社</tspan></text>
+    </g>
+  </g>
+  <g>
+    <line class="cls-1" x1="68.19" y1="69.71" x2="68.19" y2="108.21"/>
+    <line class="cls-1" x1="68.19" y1="38.41" x2="68.19" y2="58.51"/>
+    <line class="cls-1" x1="190.29" y1="106.41" x2="78.89" y2="64.21"/>
+    <line class="cls-1" x1="134.59" y1="85.31" x2="29.89" y2="45.71"/>
+    <line class="cls-1" x1="185.19" y1="16.51" x2="70.89" y2="60.31"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="346.29" y1="20.81" x2="215.39" y2="110.31"/>
+    <line class="cls-1" x1="378.89" y1="63.71" x2="305.49" y2="63.71"/>
+  </g>
+</svg>
