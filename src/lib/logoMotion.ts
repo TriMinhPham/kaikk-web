@@ -1,145 +1,118 @@
-import gsap from "gsap";
-
 /**
- * Centre of each stick's bounding box (midpoint of the <line> coords).
- * Used to calculate translation offsets when sticks swap positions.
- */
-const CENTRES: Record<string, [number, number]> = {
-  "stick-1": [68.19, 88.96],
-  "stick-2": [68.19, 48.46],
-  "stick-3": [134.59, 85.31],
-  "stick-4": [82.24, 65.51],
-  "stick-5": [128.04, 38.41],
-  "stick-6": [280.84, 65.56],
-  "stick-7": [342.19, 63.71],
-};
-
-/**
- * Per-stick initial assembly offsets.
- * Large translations + full 360° rotations for a dramatic scattered entrance.
- */
-const ASSEMBLY: Record<string, [number, number, number]> = {
-  "stick-1": [-35, 22, 360], // centre ~(68,89)  y max headroom ≈ 27
-  "stick-2": [35, -30, -360], // centre ~(68,48)  y min headroom ≈ -36
-  "stick-3": [45, 25, 360], // centre ~(135,85) y max headroom ≈ 31
-  "stick-4": [-45, -40, -360], // centre ~(82,66)  y min headroom ≈ -54
-  "stick-5": [40, -22, 360], // centre ~(128,38) y min headroom ≈ -26
-  "stick-6": [45, -35, -360], // centre ~(281,66) x max headroom ≈ 103
-  "stick-7": [-40, 38, 360], // centre ~(342,64) x max headroom ≈ 42
-};
-
-/**
- * Fisher-Yates derangement: shuffle so NO element stays at its own index.
- * Guarantees every stick moves to a different stick's position.
- */
-function derange<T>(arr: T[]): T[] {
-  const result = [...arr];
-  do {
-    for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [result[i], result[j]] = [result[j], result[i]];
-    }
-  } while (result.some((v, i) => v === arr[i]));
-  return result;
-}
-
-/**
- * Initialise the logo-mark stick animation.
+ * Logo stick animation using the Web Animations API (no external deps).
  *
  * 1. Intro: sticks assemble from scattered offsets (plays once).
- * 2. Loop: sticks randomly swap positions + spin 360° (infinite).
- *
- * Returns a cleanup function that kills timelines and removes listeners.
+ * 2. Loop: sticks spin in place with a pause between cycles (infinite).
  */
+
+const ASSEMBLY: Record<string, [number, number, number]> = {
+  "stick-1": [-35, 22, 360],
+  "stick-2": [35, -30, -360],
+  "stick-3": [45, 25, 360],
+  "stick-4": [-45, -40, -360],
+  "stick-5": [40, -22, 360],
+  "stick-6": [45, -35, -360],
+  "stick-7": [-40, 38, 360],
+};
+
 export function initLogoAnimation(svg: SVGSVGElement): () => void {
   const prefersReduced = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
-  if (prefersReduced) {
-    return () => {};
-  }
+  if (prefersReduced) return () => {};
 
   const sticks = svg.querySelectorAll<SVGGElement>("[data-stick]");
   if (sticks.length === 0) return () => {};
 
-  const ids = Array.from(sticks).map((g) => g.id);
+  const animations: Animation[] = [];
   let killed = false;
-  let activeTl: gsap.core.Timeline | null = null;
+  let spinTimeouts: ReturnType<typeof setTimeout>[] = [];
 
-  /* ── Phase 1: assembly intro (plays once) ── */
-  const intro = gsap.timeline({ paused: false });
-
+  /* ── Phase 1: assembly intro ── */
+  let maxEnd = 0;
   sticks.forEach((g, i) => {
     const id = g.id;
     const [tx, ty, r] = ASSEMBLY[id] ?? [0, 0, 0];
+    const delay = i * 80; // 0.08s stagger
+    const duration = 1200;
 
-    gsap.set(g, { x: tx, y: ty });
-
-    intro.to(
-      g,
+    const anim = g.animate(
+      [
+        { transform: `translate(${tx}px, ${ty}px) rotate(0deg)` },
+        { transform: `translate(0px, 0px) rotate(${r}deg)` },
+      ],
       {
-        x: 0,
-        y: 0,
-        rotation: r,
-        duration: 1.2,
-        ease: "power3.out",
+        duration,
+        delay,
+        easing: "cubic-bezier(0.33, 1, 0.68, 1)", // power3.out equivalent
+        fill: "forwards",
       },
-      i * 0.08,
     );
+    animations.push(anim);
+    const end = delay + duration;
+    if (end > maxEnd) maxEnd = end;
   });
 
-  /* ── Phase 2: spin-in-place loop ── */
+  /* ── Phase 2: spin-in-place loop (starts after intro) ── */
   function spinCycle() {
     if (killed) return;
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        sticks.forEach((g) => gsap.set(g, { rotation: 0 }));
-        if (!killed) gsap.delayedCall(2, spinCycle);
-      },
-    });
-    activeTl = tl;
-
     sticks.forEach((g, i) => {
       const spin = i % 2 === 0 ? 360 : -360;
+      const duration = (5 + i * 0.2) * 1000;
 
-      tl.to(
-        g,
+      const anim = g.animate(
+        [
+          { transform: `rotate(0deg)` },
+          { transform: `rotate(${spin}deg)` },
+        ],
         {
-          rotation: spin,
-          duration: 5 + i * 0.2,
-          ease: "none",
+          duration,
+          easing: "linear",
+          fill: "forwards",
         },
-        0,
       );
+      animations.push(anim);
     });
+
+    // Schedule next cycle after longest spin + 2s pause
+    const longest = (5 + (sticks.length - 1) * 0.2) * 1000;
+    const tid = setTimeout(() => {
+      // Reset transforms before next cycle
+      sticks.forEach((g) => {
+        g.style.transform = "";
+      });
+      spinCycle();
+    }, longest + 2000);
+    spinTimeouts.push(tid);
   }
 
-  intro.eventCallback("onComplete", () => {
-    sticks.forEach((g) => gsap.set(g, { rotation: 0 }));
+  const introTid = setTimeout(() => {
+    // Clear intro fill states
+    sticks.forEach((g) => {
+      g.style.transform = "";
+    });
     spinCycle();
-  });
+  }, maxEnd);
+  spinTimeouts.push(introTid);
 
-  /* ── Pause when tab is hidden, resume when visible ── */
+  /* ── Pause when tab is hidden ── */
   const onVisibility = () => {
     if (document.hidden) {
-      intro.pause();
-      activeTl?.pause();
+      animations.forEach((a) => a.pause());
     } else {
-      if (intro.progress() < 1) {
-        intro.resume();
-      } else {
-        activeTl?.resume();
-      }
+      animations.forEach((a) => {
+        if (a.playState === "paused") a.play();
+      });
     }
   };
   document.addEventListener("visibilitychange", onVisibility);
 
   return () => {
     killed = true;
-    intro.kill();
-    activeTl?.kill();
+    animations.forEach((a) => a.cancel());
+    spinTimeouts.forEach((t) => clearTimeout(t));
     document.removeEventListener("visibilitychange", onVisibility);
   };
 }
