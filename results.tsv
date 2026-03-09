@@ -1,0 +1,5 @@
+commit	metric	status	description
+7295b3a	9704	keep	baseline
+159c148	9704	discard	experiment 1 (no changes)
+6c6d0ee	9152	keep	experiment 2
+61fc6d2	9152	discard	experiment 3 (no changes)
