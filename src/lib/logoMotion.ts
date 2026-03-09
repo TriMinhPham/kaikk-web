@@ -1,55 +1,23 @@
-import gsap from "gsap";
-
 /**
- * Centre of each stick's bounding box (midpoint of the <line> coords).
- * Used to calculate translation offsets when sticks swap positions.
- */
-const CENTRES: Record<string, [number, number]> = {
-  "stick-1": [68.19, 88.96],
-  "stick-2": [68.19, 48.46],
-  "stick-3": [134.59, 85.31],
-  "stick-4": [82.24, 65.51],
-  "stick-5": [128.04, 38.41],
-  "stick-6": [280.84, 65.56],
-  "stick-7": [342.19, 63.71],
-};
-
-/**
- * Per-stick initial assembly offsets.
- * Large translations + full 360° rotations for a dramatic scattered entrance.
+ * Per-stick initial assembly offsets: [tx, ty, rotation].
  */
 const ASSEMBLY: Record<string, [number, number, number]> = {
-  "stick-1": [-35, 22, 360], // centre ~(68,89)  y max headroom ≈ 27
-  "stick-2": [35, -30, -360], // centre ~(68,48)  y min headroom ≈ -36
-  "stick-3": [45, 25, 360], // centre ~(135,85) y max headroom ≈ 31
-  "stick-4": [-45, -40, -360], // centre ~(82,66)  y min headroom ≈ -54
-  "stick-5": [40, -22, 360], // centre ~(128,38) y min headroom ≈ -26
-  "stick-6": [45, -35, -360], // centre ~(281,66) x max headroom ≈ 103
-  "stick-7": [-40, 38, 360], // centre ~(342,64) x max headroom ≈ 42
+  "stick-1": [-35, 22, 360],
+  "stick-2": [35, -30, -360],
+  "stick-3": [45, 25, 360],
+  "stick-4": [-45, -40, -360],
+  "stick-5": [40, -22, 360],
+  "stick-6": [45, -35, -360],
+  "stick-7": [-40, 38, 360],
 };
 
 /**
- * Fisher-Yates derangement: shuffle so NO element stays at its own index.
- * Guarantees every stick moves to a different stick's position.
- */
-function derange<T>(arr: T[]): T[] {
-  const result = [...arr];
-  do {
-    for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [result[i], result[j]] = [result[j], result[i]];
-    }
-  } while (result.some((v, i) => v === arr[i]));
-  return result;
-}
-
-/**
- * Initialise the logo-mark stick animation.
+ * Initialise the logo-mark stick animation using the Web Animations API.
  *
  * 1. Intro: sticks assemble from scattered offsets (plays once).
- * 2. Loop: sticks randomly swap positions + spin 360° (infinite).
+ * 2. Loop: sticks spin in place (infinite).
  *
- * Returns a cleanup function that kills timelines and removes listeners.
+ * Returns a cleanup function that cancels animations and removes listeners.
  */
 export function initLogoAnimation(svg: SVGSVGElement): () => void {
   const prefersReduced = window.matchMedia(
@@ -63,83 +31,84 @@ export function initLogoAnimation(svg: SVGSVGElement): () => void {
   const sticks = svg.querySelectorAll<SVGGElement>("[data-stick]");
   if (sticks.length === 0) return () => {};
 
-  const ids = Array.from(sticks).map((g) => g.id);
+  const animations: Animation[] = [];
   let killed = false;
-  let activeTl: gsap.core.Timeline | null = null;
 
   /* ── Phase 1: assembly intro (plays once) ── */
-  const intro = gsap.timeline({ paused: false });
+  let longestIntro: Animation | null = null;
 
   sticks.forEach((g, i) => {
     const id = g.id;
     const [tx, ty, r] = ASSEMBLY[id] ?? [0, 0, 0];
 
-    gsap.set(g, { x: tx, y: ty });
-
-    intro.to(
-      g,
+    const anim = g.animate(
+      [
+        { transform: `translate(${tx}px, ${ty}px) rotate(0deg)` },
+        { transform: `translate(0px, 0px) rotate(${r}deg)` },
+      ],
       {
-        x: 0,
-        y: 0,
-        rotation: r,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 1200,
+        delay: i * 80,
+        easing: "cubic-bezier(0.215, 0.61, 0.355, 1)", // power3.out equivalent
+        fill: "forwards",
       },
-      i * 0.08,
     );
+    animations.push(anim);
+
+    if (!longestIntro || (i * 80 + 1200) > ((animations.indexOf(longestIntro!) > -1 ? 0 : 0) + 1200)) {
+      longestIntro = anim;
+    }
   });
 
-  /* ── Phase 2: spin-in-place loop ── */
-  function spinCycle() {
+  // Find the last intro animation to finish
+  const lastIntro = animations[animations.length - 1];
+
+  /* ── Phase 2: spin-in-place loop (starts after intro) ── */
+  lastIntro.addEventListener("finish", () => {
     if (killed) return;
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        sticks.forEach((g) => gsap.set(g, { rotation: 0 }));
-        if (!killed) gsap.delayedCall(2, spinCycle);
-      },
+    // Reset transforms and start spin cycle
+    sticks.forEach((g) => {
+      // Cancel intro fill to allow spin
+      g.getAnimations().forEach((a) => a.cancel());
+      g.style.transform = "";
     });
-    activeTl = tl;
 
     sticks.forEach((g, i) => {
       const spin = i % 2 === 0 ? 360 : -360;
 
-      tl.to(
-        g,
+      const anim = g.animate(
+        [
+          { transform: `rotate(0deg)` },
+          { transform: `rotate(${spin}deg)` },
+        ],
         {
-          rotation: spin,
-          duration: 5 + i * 0.2,
-          ease: "none",
+          duration: (5 + i * 0.2) * 1000,
+          iterations: Infinity,
+          easing: "linear",
         },
-        0,
       );
+      animations.push(anim);
     });
-  }
-
-  intro.eventCallback("onComplete", () => {
-    sticks.forEach((g) => gsap.set(g, { rotation: 0 }));
-    spinCycle();
   });
 
   /* ── Pause when tab is hidden, resume when visible ── */
   const onVisibility = () => {
     if (document.hidden) {
-      intro.pause();
-      activeTl?.pause();
+      animations.forEach((a) => {
+        if (a.playState === "running") a.pause();
+      });
     } else {
-      if (intro.progress() < 1) {
-        intro.resume();
-      } else {
-        activeTl?.resume();
-      }
+      animations.forEach((a) => {
+        if (a.playState === "paused") a.play();
+      });
     }
   };
   document.addEventListener("visibilitychange", onVisibility);
 
   return () => {
     killed = true;
-    intro.kill();
-    activeTl?.kill();
+    animations.forEach((a) => a.cancel());
     document.removeEventListener("visibilitychange", onVisibility);
   };
 }
