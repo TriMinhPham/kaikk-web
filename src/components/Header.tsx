@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { content, Locale } from "@/lib/content";
 import LogoMark from "@/components/LogoMark";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Header({ locale }: { locale: Locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,19 +62,11 @@ export default function Header({ locale }: { locale: Locale }) {
         {/* Right side */}
         <div className="hidden items-center gap-4 md:flex">
           <span className="text-xs text-ink-muted">
-            <Link
-              href="/"
-              className={`transition-colors ${locale === "ja" ? "font-semibold text-ink" : ""} hover:text-ink`}
-            >
-              JP
-            </Link>
-            {" / "}
-            <Link
-              href="/en"
-              className={`transition-colors ${locale === "en" ? "font-semibold text-ink" : ""} hover:text-ink`}
-            >
-              EN
-            </Link>
+            <LocaleSwitcher
+              locale={locale}
+              linkClass="transition-colors hover:text-ink"
+              activeClass="font-semibold text-ink"
+            />
           </span>
           <Link
             href={`${prefix}/contact`}
@@ -149,9 +142,11 @@ export default function Header({ locale }: { locale: Locale }) {
               </svg>
             </Link>
             <div className="border-t border-edge pt-4 text-xs text-ink-muted">
-              <Link href="/" className={`transition-colors ${locale === "ja" ? "font-semibold text-ink" : ""}`}>JP</Link>
-              {" / "}
-              <Link href="/en" className={`transition-colors ${locale === "en" ? "font-semibold text-ink" : ""}`}>EN</Link>
+              <LocaleSwitcher
+                locale={locale}
+                linkClass="transition-colors"
+                activeClass="font-semibold text-ink"
+              />
             </div>
           </div>
         </nav>

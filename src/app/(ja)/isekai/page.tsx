@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mangacha MVP Plan | KAI",
+  title: "Mangacha MVP Plan",
   description:
     "Reference plan for building Mangacha as a canon-grounded interactive fiction MVP using AGE and Kaiju Crisis runtime principles.",
+  // Internal reference doc — keep out of search engines.
+  robots: { index: false, follow: false },
+  alternates: { canonical: "/isekai" },
 };
 
 const storyPackage = `{

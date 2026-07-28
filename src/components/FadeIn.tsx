@@ -15,12 +15,6 @@ export default function FadeIn({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Respect prefers-reduced-motion
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
-
     const el = ref.current;
     if (!el) return;
 
@@ -50,7 +44,7 @@ export default function FadeIn({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-all duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0"

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "株式会社KAI | AI・ITシステム開発",
-  description:
-    "株式会社KAIは、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、業務自動化およびAIシステムの設計・構築を行っています。",
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({

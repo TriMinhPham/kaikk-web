@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { content, Locale } from "@/lib/content";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const t = content[locale].footer;
@@ -30,9 +31,11 @@ export default function Footer({ locale }: { locale: Locale }) {
             <Link href={`${prefix}/company`} className="transition-colors hover:text-white">{nav.company}</Link>
             <Link href={`${prefix}/contact`} className="transition-colors hover:text-white">{nav.contact}</Link>
             <span>
-              <Link href="/" className={`transition-colors ${locale === "ja" ? "text-white" : ""} hover:text-white`}>JP</Link>
-              {" / "}
-              <Link href="/en" className={`transition-colors ${locale === "en" ? "text-white" : ""} hover:text-white`}>EN</Link>
+              <LocaleSwitcher
+                locale={locale}
+                linkClass="transition-colors hover:text-white"
+                activeClass="text-white"
+              />
             </span>
           </nav>
         </div>
