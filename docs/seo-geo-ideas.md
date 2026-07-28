@@ -13,7 +13,7 @@ Backlog of improvements that could not be done in code alone (accounts, services
 
 5. **Exact geo coordinates in JSON-LD** — add `geo` (latitude/longitude) to the ProfessionalService schema once confirmed from Google Maps for the Toho Hibiya Promenade Building. Left out to avoid publishing approximate coordinates.
 6. **Phone number** — schema and footer have email only. A phone number (`telephone` in JSON-LD + `contactPoint`) increases trust signals for local SEO. Business decision.
-7. **Designed OG image** — current one is generated at build (KAI wordmark + tagline, Latin text only, since Japanese glyphs need an embedded font). A designer-made 1200×630 with Japanese copy would look better in Slack/LINE/X shares. Replace `src/app/opengraph-image.tsx` or drop a static `opengraph-image.png` in `src/app/`.
+7. **Designed OG image** — current `public/og.png` is generated (KAI wordmark + tagline, Latin text only, since Japanese glyphs need an embedded font). A designer-made 1200×630 with Japanese copy would look better in Slack/LINE/X shares. Just replace `public/og.png`.
 8. **Privacy policy page (プライバシーポリシー)** — expected on Japanese corporate sites, needed once the contact form stores data, and a trust signal for both users and search engines. Needs legal review of the text.
 9. **Analytics** — GA4 or privacy-friendly (Plausible/Umami) to see which queries/pages convert. Needs account + script.
 10. **sameAs links in JSON-LD** — add LinkedIn / X / GitHub / Wantedly profiles once they exist. Strong entity signal for GEO (helps AI engines connect the company across sources).

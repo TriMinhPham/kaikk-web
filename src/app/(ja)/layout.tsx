@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     alternateLocale: "en_US",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og.png",
         width: 1200,
         height: 630,
         type: "image/png",
