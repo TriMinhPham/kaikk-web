@@ -3,9 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/content";
+import { solutionSlugs } from "@/lib/solutions";
 
 // Paths that exist in both locales. Anything else falls back to the locale root.
-const SHARED_PATHS = ["/", "/services", "/process", "/company", "/contact"];
+const SHARED_PATHS = [
+  "/",
+  "/services",
+  "/process",
+  "/company",
+  "/contact",
+  ...solutionSlugs.map(slug => `/solutions/${slug}`),
+];
 
 export default function LocaleSwitcher({
   locale,

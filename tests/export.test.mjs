@@ -4,47 +4,133 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const out = resolve('out');
-const routes = ['/', '/services', '/process', '/company', '/contact', '/en', '/en/services', '/en/process', '/en/company', '/en/contact'];
+const solutionPaths = ['/solutions/ai-adoption', '/solutions/business-automation', '/solutions/generative-ai'];
+const basePaths = ['/', '/services', '/process', '/company', '/contact', ...solutionPaths];
+const routes = [...basePaths, ...basePaths.map(p => (p === '/' ? '/en' : `/en${p}`))];
+const read = route => readFileSync(resolve(out, route === '/' ? 'index.html' : `${route.slice(1)}.html`), 'utf8');
+const jsonLd = html => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
+const nodes = html => jsonLd(html).flatMap(s => s['@graph'] ?? [s]);
+const text = html => html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
+
 for (const route of routes) {
   test(`export contract: ${route}`, () => {
-    const html = readFileSync(resolve(out, route === '/' ? 'index.html' : `${route.slice(1)}.html`), 'utf8');
+    const html = read(route);
+    const url = `https://kaikk.jp${route === '/' ? '/' : route}`;
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1);
-    assert.ok(html.includes(`rel="canonical" href="https://kaikk.jp${route === '/' ? '' : route}"`) || (route === '/' && html.includes('rel="canonical" href="https://kaikk.jp/"')));
-    assert.ok(html.includes('hrefLang="ja"'));
-    assert.ok(html.includes('hrefLang="en"'));
-    assert.ok(html.includes('hrefLang="x-default"'));
+    const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
+    assert.ok(canonical && new URL(canonical).href === new URL(url).href, `canonical ${canonical}`);
+    for (const lang of ['ja', 'en', 'x-default']) assert.ok(html.includes(`hrefLang="${lang}"`), lang);
+    const ogUrl = html.match(/property="og:url" content="([^"]+)"/)?.[1];
+    assert.ok(ogUrl && new URL(ogUrl).href === new URL(url).href, `og:url ${ogUrl}`);
+    assert.match(html, /property="og:image" content="https:\/\/kaikk\.jp\/og\.png"/);
+    assert.match(html, /property="og:title" content="[^"]+"/);
+    assert.match(html, /<meta name="description" content="[^"]{50,}"/);
     assert.doesNotMatch(html, /kaikk\.co\.jp|株式会社KAI/);
     assert.ok(html.includes('id="main-content"'));
-    const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
-    assert.ok(schemas.some(s => s['@graph']?.some(n => n.url === 'https://kaikk.jp/')));
+    const all = nodes(html);
+    assert.ok(all.some(n => n.url === 'https://kaikk.jp/' && n['@id'] === 'https://kaikk.jp/#organization'));
+    const org = all.find(n => n['@id'] === 'https://kaikk.jp/#organization');
+    assert.equal(org.identifier.value, '1010001262744');
+    if (route !== '/' && route !== '/en') {
+      const crumbs = all.find(n => n['@type'] === 'BreadcrumbList');
+      assert.ok(crumbs, 'breadcrumb');
+      assert.equal(crumbs.itemListElement.at(-1).item, url);
+      crumbs.itemListElement.forEach((item, i) => assert.equal(item.position, i + 1));
+    }
+    if (!route.endsWith('/contact')) assert.ok(/href="(\/en)?\/contact(\?topic=[a-z-]+)?"[^>]*class="button-primary"|class="button-primary"[^>]*href="(\/en)?\/contact/.test(html), 'primary CTA to contact');
     if (route.endsWith('/contact')) {
       assert.ok(html.includes('action="mailto:info@kaikk.jp"'));
       assert.ok(html.includes('method="POST"'));
-      assert.ok(html.includes('htmlFor="inquiry-email"') || html.includes('for="inquiry-email"'));
+      assert.ok(html.includes('for="inquiry-email"'));
       assert.ok(html.includes('role="status"'));
+      assert.match(html, /id="inquiry-name"[^>]*required/);
+      assert.match(html, /id="inquiry-email"[^>]*required/);
+      assert.doesNotMatch(html.match(/<input[^>]*id="inquiry-company"[^>]*>/)[0], /required/);
+      assert.equal((html.match(/type="radio" name="topic"/g) || []).length, 5);
     }
   });
 }
 
-test('public discovery endpoints use the correct origin', () => {
-  for (const file of ['sitemap.xml', 'robots.txt', 'llms.txt']) {
-    const text = readFileSync(resolve(out, file), 'utf8');
-    assert.ok(text.includes('https://kaikk.jp'));
-    assert.doesNotMatch(text, /kaikk\.co\.jp/);
+test('visible FAQs and FAQPage structured data match exactly', () => {
+  for (const route of ['/', '/en', ...solutionPaths, ...solutionPaths.map(p => `/en${p}`)]) {
+    const html = read(route);
+    const faq = nodes(html).find(n => n['@type'] === 'FAQPage');
+    assert.ok(faq, route);
+    const visible = text(html);
+    assert.ok(faq.mainEntity.length >= 3);
+    for (const q of faq.mainEntity) {
+      assert.equal(q['@type'], 'Question');
+      assert.ok(visible.includes(q.name.replace(/&/g, '&amp;')) || visible.includes(q.name), `${route}: ${q.name}`);
+      assert.ok(q.acceptedAnswer.text.length > 20);
+    }
   }
-  assert.ok(existsSync(resolve(out, 'images/tokyo.jpg')));
+});
+
+test('service pages expose Service structured data tied to the organization', () => {
+  for (const route of ['/services', '/en/services', ...solutionPaths]) {
+    const services = nodes(read(route)).filter(n => n['@type'] === 'Service');
+    assert.ok(services.length >= 1, route);
+    for (const s of services) assert.equal(s.provider['@id'], 'https://kaikk.jp/#organization');
+  }
+});
+
+test('no invented social proof or unapproved commercial promises', () => {
+  for (const route of routes) {
+    const visible = text(read(route));
+    assert.doesNotMatch(visible, /導入実績\s*\d|お客様の声|満足度|No\.?\s?1(?!\d)|業界初|testimonial|trusted by|\d+\s*社以上|\d+\+?\s*clients/i, route);
+    // Free consultation, response times and prices only appear once enabled in src/lib/offer.ts.
+    assert.doesNotMatch(visible, /無料|営業日以内|free of charge|business days|円（税別）|JPY [\d,]+ \(excl/i, route);
+  }
+});
+
+test('public discovery endpoints use the correct origin and list every page', () => {
+  for (const file of ['sitemap.xml', 'robots.txt', 'llms.txt']) {
+    const body = readFileSync(resolve(out, file), 'utf8');
+    assert.ok(body.includes('https://kaikk.jp'));
+    assert.doesNotMatch(body, /kaikk\.co\.jp/);
+  }
+  const sitemap = readFileSync(resolve(out, 'sitemap.xml'), 'utf8');
+  for (const route of routes) assert.ok(sitemap.includes(`<loc>https://kaikk.jp${route === '/' ? '/' : route}</loc>`), route);
+  assert.ok(sitemap.includes('hreflang="x-default"'));
+  assert.doesNotMatch(sitemap, /isekai/);
+  const llms = readFileSync(resolve(out, 'llms.txt'), 'utf8');
+  for (const p of solutionPaths) assert.ok(llms.includes(`https://kaikk.jp${p}`), p);
+  assert.ok(llms.includes('1010001262744'));
   const legacy = readFileSync(resolve(out, 'isekai.html'), 'utf8');
   assert.ok(legacy.includes('noindex'));
 });
 
+test('hero photo ships responsive pre-rendered variants', () => {
+  for (const w of [480, 800, 1200]) for (const ext of ['avif', 'webp']) assert.ok(existsSync(resolve(out, `images/tokyo-${w}.${ext}`)), `${w}.${ext}`);
+  assert.ok(existsSync(resolve(out, 'images/tokyo-1200.jpg')));
+  const home = read('/');
+  assert.match(home, /<source type="image\/avif" srcSet="[^"]*tokyo-480\.avif 480w/);
+  assert.match(home, /fetchPriority="high"/);
+  assert.doesNotMatch(home, /src="\/images\/tokyo\.jpg"/);
+});
+
+test('404 page is a complete document with a way back', () => {
+  const html = readFileSync(resolve(out, '404.html'), 'utf8');
+  assert.match(html, /<html lang="ja">/);
+  assert.match(html, /noindex/);
+  assert.ok(html.includes('href="/contact"'));
+  assert.ok(html.includes('href="/en"'));
+});
+
 test('expertise links remain evidence-based and distinguish prior founder work', () => {
-  const ja = readFileSync(resolve(out, 'index.html'), 'utf8');
-  const en = readFileSync(resolve(out, 'en.html'), 'utf8');
+  const ja = read('/');
+  const en = read('/en');
   for (const html of [ja, en]) {
     assert.ok(html.includes('e.vnexpress.net/news/business/'));
     assert.ok(html.includes('ipvietnam.gov.vn/documents/'));
     assert.ok(html.includes('1-0053047'));
+    assert.ok(html.includes('houjin-bangou.nta.go.jp'));
   }
   assert.ok(en.includes('not KAI client engagements'));
+  for (const route of ['/company', '/en/company']) {
+    const html = read(route);
+    assert.ok(html.includes('0100-01-262744') && html.includes('1010001262744'), route);
+    assert.ok(html.includes('houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=1010001262744'), route);
+  }
   assert.ok(ja.includes('受託実績'));
 });

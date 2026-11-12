@@ -1,16 +1,17 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
+import { solutionSlugs } from "@/lib/solutions";
 
 export const dynamic = "force-static";
 
 // Locale-agnostic paths. /isekai is an internal reference doc and stays out.
-const paths = ["", "/services", "/process", "/company", "/contact"];
+const paths = ["", "/services", "/process", "/company", "/contact", ...solutionSlugs.map(slug => `/solutions/${slug}`)];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) => {
     const ja = `${SITE_URL}${path || "/"}`;
     const en = `${SITE_URL}/en${path}`;
-    const alternates = { languages: { ja, en } };
+    const alternates = { languages: { ja, en, "x-default": ja } };
     return [
       {
         url: ja,

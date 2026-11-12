@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { pageAlternates, siteJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    default: "KAI Inc. | AI & IT Systems Development in Tokyo",
+    default: "KAI Inc. | AI Adoption & Business Automation for SMEs in Tokyo",
     template: "%s | KAI Inc.",
   },
   description:
@@ -35,10 +36,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd("en")) }}
-        />
+        <JsonLd data={siteJsonLd("en")} />
         <a href="#main-content" className="skip-link">Skip to content</a>
         <Header locale="en" />
         <main id="main-content">{children}</main>

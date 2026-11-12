@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { pageAlternates, siteJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    default: "KAI株式会社｜AI・ITシステム開発",
+    default: "KAI株式会社｜中小企業のAI導入支援・業務自動化（東京・有楽町）",
     template: "%s｜KAI株式会社",
   },
   description:
@@ -35,10 +36,7 @@ export default function JaLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body className="antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd("ja")) }}
-        />
+        <JsonLd data={siteJsonLd("ja")} />
         <a href="#main-content" className="skip-link">本文へスキップ</a>
         <Header locale="ja" />
         <main id="main-content">{children}</main>

@@ -1,13 +1,12 @@
 import CompanyContent from "@/components/pages/CompanyContent";
-import type { Metadata } from "next";
-import { pageAlternates } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Company",
-  description:
-    "Company profile of KAI Inc., an AI & IT development company based in Yurakucho, Chiyoda-ku, Tokyo.",
-  alternates: pageAlternates("/company", "en"),
-};
+export const metadata = pageMetadata({
+  path: "/company",
+  locale: "en",
+  title: "Company Profile",
+  description: "Company profile of KAI Inc. (Japanese Corporate Number 1010001262744), an AI and software development company in Yurakucho, Chiyoda-ku, Tokyo, including our founder’s background.",
+});
 
 export default function CompanyPageEn() {
   return <CompanyContent locale="en" />;

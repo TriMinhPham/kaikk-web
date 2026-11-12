@@ -1,13 +1,12 @@
 import ContactContent from "@/components/pages/ContactContent";
-import type { Metadata } from "next";
-import { pageAlternates } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Contact KAI Inc. about AI implementation, business automation, or web system development. Start with your business problem, even before defining requirements.",
-  alternates: pageAlternates("/contact", "en"),
-};
+export const metadata = pageMetadata({
+  path: "/contact",
+  locale: "en",
+  title: "Contact & Project Inquiries",
+  description: "Contact KAI Inc. about AI adoption, business automation, generative AI or web systems. Start with your business problem — no finished specification needed.",
+});
 
 export default function ContactPageEn() {
   return <ContactContent locale="en" />;

@@ -149,7 +149,6 @@ export const content = {
     },
     contact: {
       title: "お問い合わせ",
-      subtitle: "まずはお気軽にご相談ください。通常2営業日以内にご返信いたします。",
       fields: {
         companyName: "会社名",
         contactPerson: "ご担当者名",
@@ -157,7 +156,6 @@ export const content = {
         message: "お問い合わせ内容",
       },
       submit: "送信する",
-      note: "通常2営業日以内にご返信いたします。",
     },
     footer: {
       companyName: "KAI株式会社",
@@ -309,7 +307,6 @@ export const content = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Get in touch with us. We typically respond within two business days.",
       fields: {
         companyName: "Company Name",
         contactPerson: "Contact Person",
@@ -317,7 +314,6 @@ export const content = {
         message: "Message",
       },
       submit: "Submit",
-      note: "We typically respond within two business days.",
     },
     footer: {
       companyName: "KAI Inc.",
