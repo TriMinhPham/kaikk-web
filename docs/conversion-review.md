@@ -114,14 +114,14 @@ CLS 0 and TBT ≤ 40 ms before and after. Accessibility, Best Practices and SEO 
 
 | Step | Expected impact | Why not done here |
 |---|---|---|
-| Real inquiry endpoint (Cloudflare Worker + Turnstile + transactional email), with privacy notice and retention policy | Highest conversion lever. Removes mail-app dependence entirely | Needs provider choice, APPI privacy text and delivery testing |
-| Privacy policy page (個人情報の取扱い) | Expected on JP corporate sites. Required before any backend | Needs legal review |
-| Cookieless Cloudflare Web Analytics (no cookies, no personal data) | Makes conversion measurable (CTA clicks → contact page → draft opened) | Third-party script needs founder approval |
+| ~~Real inquiry endpoint~~ **Done (follow-up below):** Pages Function + Turnstile + D1; email notification coded but off | Highest conversion lever. Removes mail-app dependence entirely | Email sending needs Workers Paid (declined for now) |
+| ~~Privacy policy page~~ **Done:** `/privacy`, `/en/privacy` (draft) | Expected on JP corporate sites. Required before any backend | Legal review still recommended |
+| ~~Cookieless Cloudflare Web Analytics~~ Already auto-installed on the zone; disclosed in the privacy policy and allowed by the CSP | Makes conversion measurable | — |
 | Search Console and Bing Webmaster: submit `https://kaikk.jp/sitemap.xml`; request indexing of the 6 new pages | Faster discovery. Bing feeds several answer engines | Requires account access |
 | One real, provenance-labelled demonstration (internal tool or anonymised PoC) with a screenshot | Strongest credibility asset for a new company | Requires real work and Director approval |
 | Japanese per-page OG images (Noto Sans JP, OFL) | Better LINE/Slack/X share previews in Japanese | Design decision; current OG is Latin-only |
 | Booking link for the first meeting (e.g. a scheduling tool) | Lowers friction from email ping-pong | Vendor and privacy decision |
-| `_headers` / Cloudflare cache rule: `Cache-Control: public, max-age=31536000, immutable` for `/_next/static/*` | Faster repeat visits | Needs a check of the live Cloudflare config |
+| ~~`_headers` immutable cache~~ **Done:** `public/_headers` (plus CSP/HSTS/X-Frame-Options/Permissions-Policy) | Faster repeat visits | — |
 | 適格請求書発行事業者登録番号, phone number, `sameAs` profiles (LinkedIn etc.) | B2B buyers check invoice registration. Stronger entity signals for GEO | Facts not provided |
 
 ## Verification (this branch)
@@ -150,3 +150,19 @@ Browser QA, headless Chrome via Playwright, run against `serve out`:
   - 404 is a full document with axe 0.
 - Screenshots reviewed visually: `docs/qa/2026-11-12/*.png` (before and after).
 - Not done: real email delivery; Gmail/Outlook compose while signed in; Safari/WebKit and Firefox; Google Rich Results Test on the live site; screen-reader testing.
+
+
+## Follow-up: inquiry backend, privacy policy, headers (2026-11-12)
+
+- **Inquiry API:** `functions/api/inquiry.ts` (Cloudflare Pages Function). Same-origin only, JSON only, honeypot, minimum fill time, field rules, 5 attempts/hour per hashed IP, server-side Turnstile, stored in D1 `kaikk-inquiries` before answering `{ok:true, ref}`. Details and operating commands: `docs/inquiry-backend.md`.
+- **Form:** sends via fetch with Turnstile (loaded only on the contact pages); 「送信しました」 with a reference number only after the API confirms storage; every failure, and no-JS, falls back to the email-draft panel. Topic preselection kept.
+- **Privacy policy:** `/privacy` and `/en/privacy`, linked from the form (consent line) and footer, in the sitemap, llms.txt and locale switcher.
+- **Headers:** `public/_headers`.
+- **Email notification:** off by founder decision (no Workers Paid; no Email Routing because it would move MX away from Google Workspace). Inquiries must be read from D1 (`notified_at IS NULL` query) until a poller or email is set up.
+- Evidence: `docs/qa/2026-11-12-backend/README.md`.
+
+### Needs founder approval / action (follow-up)
+
+1. Privacy policy text (JA/EN), especially: retention 24 months after last contact (`INQUIRY_RETENTION_MONTHS`), the statement that only staff handling inquiries can access the data, the cloud providers named, and the effective date 2026-11-12. A review by a Japanese lawyer is recommended.
+2. A routine to read new inquiries from D1 (or an external poller). With email off, nothing alerts anyone.
+3. Form copy: 「送信しました」 panel says no automatic confirmation email is sent and replies come from info@kaikk.jp.

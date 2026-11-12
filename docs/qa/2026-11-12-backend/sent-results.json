@@ -1,0 +1,122 @@
+[
+  {
+    "loc": "ja",
+    "viewport": "1440x1000",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  },
+  {
+    "loc": "en",
+    "viewport": "1440x1000",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  },
+  {
+    "loc": "ja",
+    "viewport": "390x844",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  },
+  {
+    "loc": "en",
+    "viewport": "390x844",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  },
+  {
+    "loc": "ja",
+    "viewport": "320x740",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  },
+  {
+    "loc": "en",
+    "viewport": "320x740",
+    "payloadKeys": [
+      "company",
+      "elapsedMs",
+      "email",
+      "locale",
+      "message",
+      "name",
+      "topic",
+      "turnstileToken",
+      "website"
+    ],
+    "topic": "web",
+    "elapsedOk": true,
+    "focused": true,
+    "overflow": false,
+    "axe": []
+  }
+]

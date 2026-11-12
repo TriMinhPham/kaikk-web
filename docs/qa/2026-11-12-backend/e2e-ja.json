@@ -1,0 +1,29 @@
+{
+  "loc": "ja",
+  "errors": [],
+  "csp": [],
+  "requests": [
+    "GET https://brunhild.challenges.cloudflare.com",
+    "GET https://challenges.cloudflare.com",
+    "GET https://challenges.cloudflare.com/turnstile/v0/api.js",
+    "GET https://challenges.cloudflare.com/turnstile/v0/g/7c7fee70a876/api.js",
+    "POST https://challenges.cloudflare.com",
+    "POST https://conversion.kaikk-jp.pages.dev/api/inquiry"
+  ],
+  "topicPreselected": "業務自動化・システム連携",
+  "turnstileToken": true,
+  "turnstileMs": 891,
+  "webdriver": false,
+  "turnstileIframe": 0,
+  "apiStatus": 200,
+  "apiBody": {
+    "ok": true,
+    "ref": "KAI-A616-B44T"
+  },
+  "sentPanel": "送信しました\n\n受付番号: KAI-A616-B44T\n\nお問い合わせを受け付けました。内容を確認し、info@kaikk.jp からメールでご返信します。自動返信メールはお送りしていません。\n\nご返信が見当たらない場合は、迷惑メールフォルダをご確認のうえ、受付番号を添えて info@kaikk.jp までご連絡ください。",
+  "sentFocused": true,
+  "analyticsCsp": {
+    "beaconScript": "loaded",
+    "connect": "ok"
+  }
+}
