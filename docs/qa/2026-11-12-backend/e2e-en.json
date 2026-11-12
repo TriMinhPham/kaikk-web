@@ -1,0 +1,29 @@
+{
+  "loc": "en",
+  "errors": [],
+  "csp": [],
+  "requests": [
+    "GET https://brunhild.challenges.cloudflare.com",
+    "GET https://challenges.cloudflare.com",
+    "GET https://challenges.cloudflare.com/turnstile/v0/api.js",
+    "GET https://challenges.cloudflare.com/turnstile/v0/g/7c7fee70a876/api.js",
+    "POST https://challenges.cloudflare.com",
+    "POST https://conversion.kaikk-jp.pages.dev/api/inquiry"
+  ],
+  "topicPreselected": "Business automation / integration",
+  "turnstileToken": true,
+  "turnstileMs": 960,
+  "webdriver": false,
+  "turnstileIframe": 0,
+  "apiStatus": 200,
+  "apiBody": {
+    "ok": true,
+    "ref": "KAI-EJQ3-3SWP"
+  },
+  "sentPanel": "Sent\n\nReference: KAI-EJQ3-3SWP\n\nWe have received your inquiry. We will review it and reply by email from info@kaikk.jp. No automatic confirmation email is sent.\n\nIf you cannot find our reply, please check your spam folder, then email info@kaikk.jp quoting your reference.",
+  "sentFocused": true,
+  "analyticsCsp": {
+    "beaconScript": "loaded",
+    "connect": "ok"
+  }
+}

@@ -1,60 +1,43 @@
-import { content, Locale } from "@/lib/content";
-import ServiceIcon from "@/components/ServiceIcon";
-import FadeIn from "@/components/FadeIn";
+import Link from "next/link";
+import { content, type Locale } from "@/lib/content";
+import { marketing } from "@/lib/marketing";
+import { solutions, solutionSlugs } from "@/lib/solutions";
+import { serviceJsonLd } from "@/lib/site";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CtaBlock from "@/components/CtaBlock";
+import JsonLd from "@/components/JsonLd";
 
 export default function ServicesContent({ locale }: { locale: Locale }) {
   const t = content[locale].services;
-  const overview = content[locale].servicesOverview;
-
+  const m = marketing[locale];
+  const s = solutions[locale];
+  const prefix = locale === "en" ? "/en" : "";
   return (
     <>
-      {/* Page header */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <FadeIn>
-            <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
-              {t.title}
-            </h1>
-            <p className="text-ink-muted">{t.note}</p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Service cards */}
-      <section className="pb-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-5 md:grid-cols-2">
-            {overview.items.map((item, i) => {
-              const section = t.sections[i];
-              return (
-                <FadeIn key={item.title} delay={i * 100}>
-                  <div className="card-hover rounded-2xl bg-surface-card p-8 shadow-sm">
-                    <ServiceIcon name={item.icon} />
-                    <h2 className="mt-6 mb-2 text-lg font-bold">{section.title}</h2>
-                    {section.desc && (
-                      <p className="mb-4 text-sm leading-relaxed text-ink-muted">
-                        {section.desc}
-                      </p>
-                    )}
-                    {"items" in section && section.items && (
-                      <ul className="space-y-2">
-                        {section.items.map((item) => (
-                          <li key={item} className="flex items-center gap-3 text-sm text-ink-muted">
-                            <svg className="h-4 w-4 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </FadeIn>
-              );
-            })}
+      <JsonLd data={serviceJsonLd(locale, t.sections.map((section, i) => ({ name: section.title, description: section.desc || m.examples[i], path: `/services#service-${i + 1}` })))} />
+      <Breadcrumbs locale={locale} trail={[{ name: t.title, path: "/services" }]} />
+      <section className="page-heading site-width"><p className="eyebrow">{m.servicesLabel}</p><h1>{t.title}</h1><p>{m.servicesIntro}</p></section>
+      <section className="site-width" aria-label={t.title}>
+        {t.sections.map((section, i) => <article className="service-detail" id={`service-${i + 1}`} key={section.title}>
+          <h2>{section.title}</h2>
+          <div><p>{section.desc || m.examples[i]}</p>{"items" in section && <ul>{section.items.map(item => <li key={item}>{item}</li>)}</ul>}
+            <div className="deliverable"><p className="eyebrow">{m.outputLabel}</p><p>{m.deliverables[i]}</p></div>
           </div>
-        </div>
+        </article>)}
+        <p className="form-notice">{t.note}</p>
       </section>
+      <section className="site-section solutions-section" aria-labelledby="solutions-title">
+        <div className="section-heading">
+          <p className="eyebrow">{m.solutionsLabel}</p>
+          <div><h2 id="solutions-title">{m.solutionsTitle}</h2><p className="section-intro">{m.solutionsIntro}</p></div>
+        </div>
+        <ul className="solution-cards">
+          {solutionSlugs.map(slug => (
+            <li key={slug}><Link href={`${prefix}/solutions/${slug}`} className="solution-card"><h3>{s[slug].title}</h3><p>{s[slug].summary}</p><span className="solution-card-link">{m.solutionsLink}<span aria-hidden="true"> →</span></span></Link></li>
+          ))}
+        </ul>
+      </section>
+      <CtaBlock locale={locale} headingId="services-cta" />
     </>
   );
 }

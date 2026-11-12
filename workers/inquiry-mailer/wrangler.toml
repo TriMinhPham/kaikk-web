@@ -1,0 +1,12 @@
+# Notification mailer for the kaikk.jp inquiry API. NOT DEPLOYED YET.
+# Requires Cloudflare Email Service sending (Workers Paid plan) and kaikk.jp
+# onboarded as a sending domain. See docs/inquiry-backend.md "Enable email".
+name = "kaikk-inquiry-mailer"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+workers_dev = false   # reachable only through the Pages service binding
+
+[[send_email]]
+name = "SEND"
+destination_address = "info@kaikk.jp"          # the only possible recipient
+allowed_sender_addresses = ["inquiry@kaikk.jp"]

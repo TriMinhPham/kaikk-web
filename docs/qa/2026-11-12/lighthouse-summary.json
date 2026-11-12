@@ -1,0 +1,290 @@
+{
+ "after_-desktop": {
+  "url": "http://localhost:4402/",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 533,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 259
+ },
+ "after_-mobile": {
+  "url": "http://localhost:4402/",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 97,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2603,
+  "FCP_ms": 753,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 237
+ },
+ "after_contact-desktop": {
+  "url": "http://localhost:4402/contact",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 552,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 218
+ },
+ "after_contact-mobile": {
+  "url": "http://localhost:4402/contact",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 98,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2304,
+  "FCP_ms": 754,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 188
+ },
+ "after_en-desktop": {
+  "url": "http://localhost:4402/en",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 532,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 257
+ },
+ "after_en-mobile": {
+  "url": "http://localhost:4402/en",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 97,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2601,
+  "FCP_ms": 753,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 236
+ },
+ "after_services-desktop": {
+  "url": "http://localhost:4402/services",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 532,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 221
+ },
+ "after_services-mobile": {
+  "url": "http://localhost:4402/services",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 98,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2313,
+  "FCP_ms": 753,
+  "CLS": 0,
+  "TBT_ms": 10,
+  "transfer_KiB": 181
+ },
+ "after_solutions_ai-adoption-desktop": {
+  "url": "http://localhost:4402/solutions/ai-adoption",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 532,
+  "FCP_ms": 202,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 234
+ },
+ "after_solutions_ai-adoption-mobile": {
+  "url": "http://localhost:4402/solutions/ai-adoption",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 97,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2557,
+  "FCP_ms": 1539,
+  "CLS": 0,
+  "TBT_ms": 8,
+  "transfer_KiB": 203
+ },
+ "before_-desktop": {
+  "url": "http://localhost:4400/",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 783,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 503
+ },
+ "before_-mobile": {
+  "url": "http://localhost:4400/",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 91,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 3453,
+  "FCP_ms": 753,
+  "CLS": 0,
+  "TBT_ms": 38,
+  "transfer_KiB": 484
+ },
+ "before_contact-desktop": {
+  "url": "http://localhost:4400/contact",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 496,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 499
+ },
+ "before_contact-mobile": {
+  "url": "http://localhost:4400/contact",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 98,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2303,
+  "FCP_ms": 754,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 472
+ },
+ "before_en-desktop": {
+  "url": "http://localhost:4400/en",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 683,
+  "FCP_ms": 203,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 502
+ },
+ "before_en-mobile": {
+  "url": "http://localhost:4400/en",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 91,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 3453,
+  "FCP_ms": 753,
+  "CLS": 0,
+  "TBT_ms": 3,
+  "transfer_KiB": 483
+ },
+ "before_services-desktop": {
+  "url": "http://localhost:4400/services",
+  "lighthouse": "12.8.2",
+  "formFactor": "desktop",
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 500,
+  "FCP_ms": 204,
+  "CLS": 0,
+  "TBT_ms": 0,
+  "transfer_KiB": 500
+ },
+ "before_services-mobile": {
+  "url": "http://localhost:4400/services",
+  "lighthouse": "12.8.2",
+  "formFactor": "mobile",
+  "scores": {
+   "performance": 99,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2237,
+  "FCP_ms": 754,
+  "CLS": 0,
+  "TBT_ms": 8,
+  "transfer_KiB": 466
+ }
+}

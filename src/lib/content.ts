@@ -13,7 +13,7 @@ export const content = {
       badge: "東京発のAI・IT開発会社",
       headline: "業務に最適化された\nAI・ITシステム開発",
       subtitle:
-        "株式会社KAIは、中小企業様向けにAI導入支援・業務自動化システムの設計から構築まで、段階的な導入を支援いたします。",
+        "KAI株式会社は、中小企業様向けにAI導入支援・業務自動化システムの設計から構築まで、段階的な導入を支援いたします。",
       cta1: "サービスを見る",
       cta2: "お問い合わせ",
     },
@@ -43,12 +43,12 @@ export const content = {
       ],
     },
     strengths: {
-      title: "株式会社KAIの特徴",
+      title: "KAI株式会社の特徴",
       items: [
         "業務内容に応じた個別設計",
         "既存システムとの連携対応",
         "法人格による正式契約・NDA対応",
-        "補助金活用のご相談対応",
+        "段階的な検証と導入",
         "英語対応可能",
       ],
     },
@@ -129,14 +129,15 @@ export const content = {
     company: {
       title: "会社概要",
       rows: [
-        { label: "会社名", value: "株式会社KAI" },
+        { label: "会社名", value: "KAI株式会社" },
         { label: "英文名", value: "KAI Inc." },
         {
           label: "所在地",
           value:
             "〒100-0006\n東京都千代田区有楽町一丁目5番2号\n東宝日比谷プロムナードビル11階",
         },
-        { label: "設立", value: "2026年" },
+        { label: "設立", value: "2026年2月5日" },
+        { label: "会社法人等番号", value: "0100-01-262744" },
         { label: "資本金", value: "500万円" },
         { label: "代表取締役", value: "PHAM MINH TRI（ファム ミン チー）" },
         {
@@ -148,7 +149,6 @@ export const content = {
     },
     contact: {
       title: "お問い合わせ",
-      subtitle: "まずはお気軽にご相談ください。通常2営業日以内にご返信いたします。",
       fields: {
         companyName: "会社名",
         contactPerson: "ご担当者名",
@@ -156,15 +156,14 @@ export const content = {
         message: "お問い合わせ内容",
       },
       submit: "送信する",
-      note: "通常2営業日以内にご返信いたします。",
     },
     footer: {
-      companyName: "株式会社KAI",
+      companyName: "KAI株式会社",
       address:
         "〒100-0006\n東京都千代田区有楽町一丁目5番2号\n東宝日比谷プロムナードビル11階",
       representative: "代表取締役：PHAM MINH TRI",
       capital: "資本金：500万円",
-      email: "info@kaikk.co.jp",
+      email: "info@kaikk.jp",
       copyright: "© 2026 KAI Inc.",
     },
   },
@@ -215,7 +214,7 @@ export const content = {
         "Custom design tailored to your business",
         "Integration with existing systems",
         "Formal contracts and NDA through corporate entity",
-        "Government subsidy consultation support",
+        "Staged validation and implementation",
         "English support available",
       ],
     },
@@ -295,7 +294,8 @@ export const content = {
           value:
             "Toho Hibiya Promenade Building 11F\n1-5-2 Yurakucho, Chiyoda-ku\nTokyo 100-0006, Japan",
         },
-        { label: "Established", value: "2026" },
+        { label: "Established", value: "5 February 2026" },
+        { label: "Company Registration Number", value: "0100-01-262744" },
         { label: "Capital", value: "JPY 5,000,000" },
         { label: "Representative Director", value: "PHAM MINH TRI" },
         {
@@ -307,7 +307,6 @@ export const content = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Get in touch with us. We typically respond within two business days.",
       fields: {
         companyName: "Company Name",
         contactPerson: "Contact Person",
@@ -315,7 +314,6 @@ export const content = {
         message: "Message",
       },
       submit: "Submit",
-      note: "We typically respond within two business days.",
     },
     footer: {
       companyName: "KAI Inc.",
@@ -323,7 +321,7 @@ export const content = {
         "Toho Hibiya Promenade Building 11F\n1-5-2 Yurakucho, Chiyoda-ku\nTokyo 100-0006, Japan",
       representative: "Representative Director: PHAM MINH TRI",
       capital: "Capital: JPY 5,000,000",
-      email: "info@kaikk.co.jp",
+      email: "info@kaikk.jp",
       copyright: "© 2026 KAI Inc.",
     },
   },

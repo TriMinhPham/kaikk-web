@@ -1,0 +1,257 @@
+[
+  {
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "header": 77,
+    "ctaBottom": 561.75,
+    "ctaVisible": true,
+    "heroLines": 1.9996279761904763,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/",
+    "route": "/",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "axe": [],
+    "faqWorks": true
+  },
+  {
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "header": 77,
+    "ctaBottom": 543.359375,
+    "ctaVisible": true,
+    "heroLines": 1.9996279761904763,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/en",
+    "route": "/en",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "axe": [],
+    "faqWorks": true
+  },
+  {
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "width": 390,
+    "scrollWidth": 390,
+    "header": 77,
+    "ctaBottom": 434.03125,
+    "ctaVisible": true,
+    "heroLines": 1.9998937074829932,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/",
+    "route": "/",
+    "viewport": [
+      390,
+      844
+    ],
+    "axe": [],
+    "menuExpanded": true,
+    "closedMenuHidden": true,
+    "faqWorks": true
+  },
+  {
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "width": 390,
+    "scrollWidth": 390,
+    "header": 77,
+    "ctaBottom": 423.9375,
+    "ctaVisible": true,
+    "heroLines": 1.9996279761904763,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/en",
+    "route": "/en",
+    "viewport": [
+      390,
+      844
+    ],
+    "axe": [],
+    "menuExpanded": true,
+    "closedMenuHidden": true,
+    "faqWorks": true
+  },
+  {
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "width": 320,
+    "scrollWidth": 320,
+    "header": 77,
+    "ctaBottom": 417.21875,
+    "ctaVisible": true,
+    "heroLines": 1.9996279761904763,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/",
+    "route": "/",
+    "viewport": [
+      320,
+      740
+    ],
+    "axe": [],
+    "faqWorks": true
+  },
+  {
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "width": 320,
+    "scrollWidth": 320,
+    "header": 77,
+    "ctaBottom": 419.125,
+    "ctaVisible": true,
+    "heroLines": 1.9993832236842104,
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true
+      }
+    ],
+    "canonical": "https://kaikk.jp/en",
+    "route": "/en",
+    "viewport": [
+      320,
+      740
+    ],
+    "axe": [],
+    "faqWorks": true
+  },
+  {
+    "title": "事業内容｜KAI株式会社",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/services",
+    "axe": [],
+    "route": "/services"
+  },
+  {
+    "title": "導入の流れ｜KAI株式会社",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/process",
+    "axe": [],
+    "route": "/process"
+  },
+  {
+    "title": "会社概要｜KAI株式会社",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/company",
+    "axe": [],
+    "route": "/company"
+  },
+  {
+    "title": "お問い合わせ｜KAI株式会社",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/contact",
+    "axe": [],
+    "route": "/contact",
+    "labels": true,
+    "invalidEmpty": true,
+    "copyWorks": true,
+    "copyFallback": true
+  },
+  {
+    "title": "Services | KAI Inc.",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/en/services",
+    "axe": [],
+    "route": "/en/services"
+  },
+  {
+    "title": "Process | KAI Inc.",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/en/process",
+    "axe": [],
+    "route": "/en/process"
+  },
+  {
+    "title": "Company | KAI Inc.",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/en/company",
+    "axe": [],
+    "route": "/en/company"
+  },
+  {
+    "title": "Contact | KAI Inc.",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/en/contact",
+    "axe": [],
+    "route": "/en/contact",
+    "labels": true,
+    "invalidEmpty": true,
+    "copyWorks": true,
+    "copyFallback": true
+  },
+  {
+    "title": "Mangacha MVP Plan｜KAI株式会社",
+    "h1": 1,
+    "width": 390,
+    "scrollWidth": 390,
+    "canonical": "https://kaikk.jp/isekai",
+    "axe": [],
+    "route": "/isekai"
+  }
+]

@@ -27,7 +27,7 @@ export function initLogoAnimation(svg: SVGSVGElement): () => void {
 
   const animations: Animation[] = [];
   let killed = false;
-  let spinTimeouts: ReturnType<typeof setTimeout>[] = [];
+  const spinTimeouts: ReturnType<typeof setTimeout>[] = [];
 
   /* ── Phase 1: assembly intro ── */
   let maxEnd = 0;

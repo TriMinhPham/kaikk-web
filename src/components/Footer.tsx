@@ -1,45 +1,41 @@
 import Link from "next/link";
-import { content, Locale } from "@/lib/content";
+import { content, type Locale } from "@/lib/content";
+import { CONTACT_EMAIL } from "@/lib/inquiry";
+import { solutions, solutionSlugs } from "@/lib/solutions";
+import { CORPORATE_NUMBER } from "@/lib/site";
+import { privacy } from "@/lib/privacy";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const t = content[locale].footer;
   const nav = content[locale].nav;
+  const ja = locale === "ja";
   const prefix = locale === "en" ? "/en" : "";
-
   return (
-    <footer className="bg-ink text-white">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          {/* Left: Logo + info */}
+    <footer className="site-footer">
+      <div className="site-width">
+        <div className="footer-top">
           <div>
-            <p className="mb-3 text-lg font-bold">KAI</p>
-            <p className="whitespace-pre-line text-xs leading-relaxed text-white/60">
-              {t.address}
-            </p>
-            <p className="mt-2 text-xs text-white/60">
-              <a href={`mailto:${t.email}`} className="transition-colors hover:text-white">
-                {t.email}
-              </a>
-            </p>
+            <p className="footer-name">{t.companyName}</p>
+            <p className="footer-address">{t.address}</p>
+            <p className="footer-address">{ja ? "法人番号" : "Corporate No."} {CORPORATE_NUMBER}</p>
+            <a className="footer-email" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
-
-          {/* Right: Nav links */}
-          <nav className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/60">
-            <Link href={`${prefix}/services`} className="transition-colors hover:text-white">{nav.services}</Link>
-            <Link href={`${prefix}/process`} className="transition-colors hover:text-white">{nav.process}</Link>
-            <Link href={`${prefix}/company`} className="transition-colors hover:text-white">{nav.company}</Link>
-            <Link href={`${prefix}/contact`} className="transition-colors hover:text-white">{nav.contact}</Link>
-            <span>
-              <Link href="/" className={`transition-colors ${locale === "ja" ? "text-white" : ""} hover:text-white`}>JP</Link>
-              {" / "}
-              <Link href="/en" className={`transition-colors ${locale === "en" ? "text-white" : ""} hover:text-white`}>EN</Link>
-            </span>
-          </nav>
+          <div className="footer-columns">
+            <nav className="footer-nav" aria-label={ja ? "フッターナビゲーション" : "Footer navigation"}>
+              <Link href={`${prefix}/services`}>{nav.services}</Link>
+              <Link href={`${prefix}/process`}>{nav.process}</Link>
+              <Link href={`${prefix}/company`}>{nav.company}</Link>
+              <Link href={`${prefix}/contact`}>{nav.contact}</Link>
+              <Link href={`${prefix}/privacy`}>{privacy[locale].navLabel}</Link>
+              <span><LocaleSwitcher locale={locale} linkClass="hover:text-primary" activeClass="text-ink" /></span>
+            </nav>
+            <nav className="footer-nav" aria-label={ja ? "課題別のご案内" : "Solutions"}>
+              {solutionSlugs.map(slug => <Link key={slug} href={`${prefix}/solutions/${slug}`}>{solutions[locale][slug].navLabel}</Link>)}
+            </nav>
+          </div>
         </div>
-
-        <div className="mt-10 border-t border-white/10 pt-6 text-xs text-white/40">
-          {t.copyright}
-        </div>
+        <div className="footer-bottom">{t.copyright}</div>
       </div>
     </footer>
   );

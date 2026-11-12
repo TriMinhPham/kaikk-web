@@ -1,123 +1,94 @@
 import Link from "next/link";
-import { content, Locale } from "@/lib/content";
-import ServiceIcon from "@/components/ServiceIcon";
-import FadeIn from "@/components/FadeIn";
+import { content, type Locale } from "@/lib/content";
+import { marketing } from "@/lib/marketing";
+import { solutions, solutionSlugs } from "@/lib/solutions";
+import { faqJsonLd } from "@/lib/site";
+import Expertise from "@/components/Expertise";
+import CtaBlock from "@/components/CtaBlock";
+import HeroPhoto from "@/components/HeroPhoto";
+import JsonLd from "@/components/JsonLd";
 
 export default function HomeContent({ locale }: { locale: Locale }) {
   const t = content[locale];
+  const m = marketing[locale];
+  const s = solutions[locale];
   const prefix = locale === "en" ? "/en" : "";
-
   return (
     <>
-      {/* Hero */}
-      <section className="py-24 md:py-36">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <FadeIn>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-badge-bg px-4 py-1.5 text-xs font-medium tracking-wide text-badge-ink uppercase shadow-sm">
-              {t.hero.badge}
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <h1 className="mx-auto mb-6 max-w-3xl whitespace-pre-line text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              {t.hero.headline}
-            </h1>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed text-ink-muted md:text-lg">
-              {t.hero.subtitle}
-            </p>
-          </FadeIn>
-          <FadeIn delay={300}>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href={`${prefix}/services`}
-                className="btn-press inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-white shadow-md hover:bg-primary-hover hover:shadow-lg"
-              >
-                {t.hero.cta1}
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <Link
-                href={`${prefix}/contact`}
-                className="btn-press inline-flex items-center gap-2 rounded-full border border-edge bg-surface-card px-8 py-3.5 text-sm font-medium text-ink shadow-sm hover:bg-surface hover:shadow-md"
-              >
-                {t.hero.cta2}
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <FadeIn>
-            <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl">
-              {t.servicesOverview.title}
-            </h2>
-          </FadeIn>
-          <div className="grid gap-5 md:grid-cols-2">
-            {t.servicesOverview.items.map((item, i) => (
-              <FadeIn key={item.title} delay={i * 100}>
-                <div className="card-hover rounded-2xl bg-surface-card p-8 shadow-sm">
-                  <ServiceIcon name={item.icon} />
-                  <h3 className="mt-6 mb-2 text-lg font-bold">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-ink-muted">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+      <JsonLd data={faqJsonLd(m.faqs)} />
+      <section className="hero site-width" aria-labelledby="home-title">
+        <div className="hero-copy">
+          <p className="eyebrow">{m.eyebrow}</p>
+          <h1 id="home-title">{m.headline}</h1>
+          <p className="hero-intro">{m.intro}</p>
+          <div className="hero-actions">
+            <Link href={`${prefix}/contact`} className="button-primary" data-primary-cta>{m.primaryCta}<span aria-hidden="true">→</span></Link>
+            <Link href={`${prefix}/services`} className="text-link">{t.hero.cta1}<span aria-hidden="true">→</span></Link>
           </div>
+          <ul className="reassurance hero-reassurance" aria-label={m.reassuranceLabel}>{m.reassurance.map(item => <li key={item}>{item}</li>)}</ul>
+        </div>
+        <HeroPhoto alt={m.photoAlt} />
+      </section>
+      <ul className="company-facts site-width">
+        {m.facts.map(fact => (
+          <li key={fact.value}>
+            <p>{fact.value}</p>
+            {"href" in fact ? <a href={fact.href} target="_blank" rel="noopener noreferrer">{fact.label}<span aria-hidden="true">{"\u00a0↗"}</span></a> : <span>{fact.label}</span>}
+          </li>
+        ))}
+      </ul>
+      <section className="site-section services-section" aria-labelledby="services-title">
+        <div className="services-intro">
+          <p className="eyebrow">{m.servicesLabel}</p>
+          <h2 id="services-title">{m.servicesTitle}</h2>
+          <p className="section-intro">{m.servicesIntro}</p>
+          <Link className="text-link" href={`${prefix}/services`}>{t.hero.cta1}<span aria-hidden="true">→</span></Link>
+        </div>
+        <div className="service-list">
+          {t.servicesOverview.items.map((item, i) => (
+            <Link href={`${prefix}/services#service-${i + 1}`} className="service-row" key={item.title}>
+              <div><h3>{item.title}</h3><p>{m.examples[i]}</p></div>
+              <span className="service-arrow" aria-hidden="true">↗</span>
+            </Link>
+          ))}
         </div>
       </section>
-
-      {/* Strengths */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <FadeIn>
-            <div className="rounded-2xl bg-surface-card p-8 shadow-sm md:p-12">
-              <h2 className="mb-8 text-2xl font-bold tracking-tight md:text-3xl">
-                {t.strengths.title}
-              </h2>
-              <ul className="grid gap-4 md:grid-cols-2">
-                {t.strengths.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-ink-muted">
-                    <svg className="h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </FadeIn>
+      <section className="site-section solutions-section" aria-labelledby="solutions-title">
+        <div className="section-heading">
+          <p className="eyebrow">{m.solutionsLabel}</p>
+          <div><h2 id="solutions-title">{m.solutionsTitle}</h2><p className="section-intro">{m.solutionsIntro}</p></div>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <FadeIn>
-            <div className="overflow-hidden rounded-2xl bg-ink px-8 py-16 text-center text-white shadow-lg md:px-16 md:py-20">
-              <h2 className="mx-auto mb-8 max-w-2xl whitespace-pre-line text-2xl font-bold leading-tight md:text-4xl">
-                {t.cta.headline}
-              </h2>
-              <Link
-                href={`${prefix}/contact`}
-                className="btn-press inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-white shadow-md hover:bg-primary-light hover:shadow-lg"
-              >
-                {t.cta.button}
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+        <ul className="solution-cards">
+          {solutionSlugs.map(slug => (
+            <li key={slug}>
+              <Link href={`${prefix}/solutions/${slug}`} className="solution-card">
+                <h3>{s[slug].title}</h3>
+                <p>{s[slug].summary}</p>
+                <span className="solution-card-link">{m.solutionsLink}<span aria-hidden="true"> →</span></span>
               </Link>
-            </div>
-          </FadeIn>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <Expertise locale={locale} />
+      <section className="site-section approach" aria-labelledby="approach-title">
+        <div className="section-heading">
+          <p className="eyebrow">{m.approachLabel}</p>
+          <div><h2 id="approach-title">{m.approachTitle}</h2><p className="section-intro">{m.approachIntro}</p></div>
+        </div>
+        <ol className="approach-steps">
+          {m.stages.map((step, i) => <li key={step.title}><span className="step-number">{i + 1}</span><h3>{step.title}</h3><p>{step.desc}</p></li>)}
+        </ol>
+        <div className="inline-actions">
+          <Link className="button-primary" href={`${prefix}/contact`}>{m.primaryCta}<span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href={`${prefix}/process`}>{m.processLink}<span aria-hidden="true">→</span></Link>
         </div>
       </section>
+      <section className="site-section faq-section" aria-labelledby="faq-title">
+        <div><p className="eyebrow">{m.faqLabel}</p><h2 id="faq-title">{m.faqTitle}</h2></div>
+        <div className="faq-list">{m.faqs.map(faq => <details key={faq.q}><summary>{faq.q}<span aria-hidden="true">+</span></summary><p>{faq.a}</p></details>)}</div>
+      </section>
+      <CtaBlock locale={locale} headingId="contact-title" />
     </>
   );
 }

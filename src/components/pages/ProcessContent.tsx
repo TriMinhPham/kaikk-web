@@ -1,71 +1,33 @@
-import Link from "next/link";
-import { content, Locale } from "@/lib/content";
-import FadeIn from "@/components/FadeIn";
+import { content, type Locale } from "@/lib/content";
+import { marketing } from "@/lib/marketing";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CtaBlock from "@/components/CtaBlock";
 
 export default function ProcessContent({ locale }: { locale: Locale }) {
   const t = content[locale].process;
-  const prefix = locale === "en" ? "/en" : "";
-
+  const m = marketing[locale];
+  const ja = locale === "ja";
   return (
     <>
-      {/* Page header */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <FadeIn>
-            <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
-              {t.title}
-            </h1>
-          </FadeIn>
-        </div>
+      <Breadcrumbs locale={locale} trail={[{ name: t.title, path: "/process" }]} />
+      <section className="page-heading site-width"><p className="eyebrow">{m.approachLabel}</p><h1>{t.title}</h1><p>{m.approachIntro}</p></section>
+      <section className="site-width process-section" aria-label={t.title}>
+        <ol className="process-steps">
+          {t.steps.map(step => (
+            <li key={step.num}>
+              <span className="step-number">STEP {step.num}</span>
+              <h2>{step.label}</h2>
+              <p>{step.desc}</p>
+            </li>
+          ))}
+        </ol>
+        <dl className="process-notes">
+          <div><dt>{ja ? "費用について" : "Cost"}</dt><dd>{content[locale].services.note}</dd></div>
+          <div><dt>{ja ? "契約と機密保持" : "Contracts and confidentiality"}</dt><dd>{ja ? "KAI株式会社として正式に契約を締結します。機密情報を扱う場合は、NDA（秘密保持契約）を締結したうえで詳細を伺います。" : "KAI Inc. signs formal contracts as a Japanese corporation. Where confidential information is involved, we sign an NDA before discussing details."}</dd></div>
+          <div><dt>{ja ? "PoCを省略する場合" : "When a PoC is not needed"}</dt><dd>{ja ? "要件や技術的な見通しが明確な場合は、PoCを行わずに設計・開発へ進むこともあります。" : "If requirements and technical feasibility are already clear, we can move straight to design and development."}</dd></div>
+        </dl>
       </section>
-
-      {/* Steps */}
-      <section className="pb-20">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="space-y-0">
-            {t.steps.map((step, i) => (
-              <FadeIn key={step.num} delay={i * 80}>
-                <div className="flex gap-6">
-                  {/* Timeline */}
-                  <div className="flex flex-col items-center">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
-                      {step.num}
-                    </div>
-                    {i < t.steps.length - 1 && (
-                      <div className="w-px grow bg-edge" />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="pb-12">
-                    <p className="text-sm font-medium text-primary">
-                      Step {step.num}
-                    </p>
-                    <h3 className="mt-1 text-xl font-bold">{step.label}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <div className="mt-8 text-center">
-              <Link
-                href={`${prefix}/contact`}
-                className="btn-press inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-white shadow-md hover:bg-primary-hover hover:shadow-lg"
-              >
-                {content[locale].hero.cta2}
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <CtaBlock locale={locale} headingId="process-cta" />
     </>
   );
 }

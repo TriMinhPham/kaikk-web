@@ -1,0 +1,45 @@
+{
+  "api500_ja": {
+    "sentPanel": 0,
+    "panel": "送信できませんでした。お問い合わせはまだ当社に届いていません。\n\nお手数ですが、同じ内容をメールでお送りください。入力いただいた内容から下書きを作成しました。\n\nメールアプリで下書きを開く\n↗\n内容をコピー\n\nメールアプリが開かない場合は、Webメールで同じ下書きを開けます。\n\nGmailで下書きを開く\n↗\nOutlook（Microsoft 365）で下書きを開く\n↗\nメール用の内容を表示",
+    "failure": "storage_failed",
+    "status": "送信できませんでした。下の方法でメールをお送りください。",
+    "focused": true,
+    "mailto": "mailto:info@kaikk.jp?subject=KAI%E3%81%B",
+    "gmailTo": "info@kaikk.jp",
+    "formStillFilled": "毎週の集計を自動化したいです。",
+    "axe": []
+  },
+  "api500_en": {
+    "sentPanel": 0,
+    "panel": "Your inquiry could not be sent. It has not reached us yet.\n\nPlease send the same message by email instead. We have prepared a draft from what you entered.\n\nOpen draft in email app\n↗\nCopy inquiry\n\nIf no email app opened, open the same draft in webmail.\n\nOpen draft in Gmail\n↗\nOpen draft in Outlook (Microsoft 365)\n↗\nView email draft",
+    "failure": "storage_failed",
+    "status": "Sending failed. Please use one of the email options below.",
+    "focused": true,
+    "mailto": "mailto:info@kaikk.jp?subject=Project%20i",
+    "gmailTo": "info@kaikk.jp",
+    "formStillFilled": "We want to automate weekly reports.",
+    "axe": []
+  },
+  "turnstileBlocked": {
+    "failure": "captcha_unavailable",
+    "apiCalls": 0,
+    "title": "送信できませんでした。お問い合わせはまだ当社に届いていません。",
+    "axe": []
+  },
+  "turnstilePending": {
+    "status": "Please wait a moment for the automated-sending check to finish. If it does not finish, use “Send by email instead”.",
+    "panels": 0
+  },
+  "emailPath": {
+    "title": "Your inquiry has not been sent yet.",
+    "status": "Your email draft is ready. Review it in your email app and press send."
+  },
+  "noJs": {
+    "action": "mailto:info@kaikk.jp",
+    "method": "POST",
+    "enctype": "text/plain",
+    "privacyLink": true,
+    "noscript": "JavaScriptが無効のため、送信ボタンを押すとメールアプリが開きます。"
+  }
+}

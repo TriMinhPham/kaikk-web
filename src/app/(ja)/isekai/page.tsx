@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mangacha MVP Plan | KAI",
+  title: "Mangacha MVP Plan",
   description:
     "Reference plan for building Mangacha as a canon-grounded interactive fiction MVP using AGE and Kaiju Crisis runtime principles.",
+  // Internal reference doc — keep out of search engines.
+  robots: { index: false, follow: false },
+  alternates: { canonical: "/isekai" },
 };
 
 const storyPackage = `{
@@ -99,7 +102,7 @@ const buildOrder = [
 
 function CodeBlock({ children }: { children: string }) {
   return (
-    <pre className="overflow-x-auto rounded-lg border border-edge bg-surface p-4 text-xs leading-relaxed text-ink md:text-sm">
+    <pre tabIndex={0} className="overflow-x-auto rounded-lg border border-edge bg-surface p-4 text-xs leading-relaxed text-ink md:text-sm">
       <code>{children}</code>
     </pre>
   );

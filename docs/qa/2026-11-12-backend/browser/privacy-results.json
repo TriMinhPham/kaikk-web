@@ -1,0 +1,266 @@
+[
+  {
+    "route": "/privacy",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "description": "KAI株式会社の個人情報の取扱いについて。お問い合わせで取得する情報、利用目的、保管場所（Cloudflare・Google Workspace）、保存期間、開示などのご請求方法をご案内します。",
+    "canonical": "https://kaikk.jp/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "ogUrl": "https://kaikk.jp/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "個人情報の取扱い"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-privacy-1440.png"
+  },
+  {
+    "route": "/en/privacy",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "Privacy Policy | KAI Inc.",
+    "description": "How KAI Inc. handles personal information: what the contact form collects, why, where it is stored (Cloudflare, Google Workspace), how long we keep it, and how to request access or deletion.",
+    "canonical": "https://kaikk.jp/en/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "Privacy Policy | KAI Inc.",
+    "ogUrl": "https://kaikk.jp/en/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Privacy Policy"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-en-privacy-1440.png"
+  },
+  {
+    "route": "/privacy",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "description": "KAI株式会社の個人情報の取扱いについて。お問い合わせで取得する情報、利用目的、保管場所（Cloudflare・Google Workspace）、保存期間、開示などのご請求方法をご案内します。",
+    "canonical": "https://kaikk.jp/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "ogUrl": "https://kaikk.jp/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "個人情報の取扱い"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-privacy-390.png"
+  },
+  {
+    "route": "/en/privacy",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "Privacy Policy | KAI Inc.",
+    "description": "How KAI Inc. handles personal information: what the contact form collects, why, where it is stored (Cloudflare, Google Workspace), how long we keep it, and how to request access or deletion.",
+    "canonical": "https://kaikk.jp/en/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "Privacy Policy | KAI Inc.",
+    "ogUrl": "https://kaikk.jp/en/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Privacy Policy"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-en-privacy-390.png"
+  },
+  {
+    "route": "/privacy",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "description": "KAI株式会社の個人情報の取扱いについて。お問い合わせで取得する情報、利用目的、保管場所（Cloudflare・Google Workspace）、保存期間、開示などのご請求方法をご案内します。",
+    "canonical": "https://kaikk.jp/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "個人情報の取扱い（プライバシーポリシー）｜KAI株式会社",
+    "ogUrl": "https://kaikk.jp/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "個人情報の取扱い"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-privacy-320.png"
+  },
+  {
+    "route": "/en/privacy",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "Privacy Policy | KAI Inc.",
+    "description": "How KAI Inc. handles personal information: what the contact form collects, why, where it is stored (Cloudflare, Google Workspace), how long we keep it, and how to request access or deletion.",
+    "canonical": "https://kaikk.jp/en/privacy",
+    "hreflang": [
+      "ja=https://kaikk.jp/privacy",
+      "en=https://kaikk.jp/en/privacy",
+      "x-default=https://kaikk.jp/privacy"
+    ],
+    "ogTitle": "Privacy Policy | KAI Inc.",
+    "ogUrl": "https://kaikk.jp/en/privacy",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Privacy Policy"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite",
+      "BreadcrumbList"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "privacy-en-privacy-320.png"
+  }
+]

@@ -1,0 +1,34 @@
+# KAI株式会社 (KAI Inc.)
+
+> Tokyo-based AI and software development company for small and medium-sized businesses in Japan. Services: AI adoption support starting with a small proof of concept (PoC), custom AI and business-automation systems, internal use of generative AI (e.g. document search with RAG), operations and maintenance, and web system development. Japanese and English supported. Formal contracts and NDAs through the Japanese corporation.
+
+KAI株式会社は、東京都千代田区有楽町を拠点とするAI・ITシステム開発会社です。中小企業様向けに、業務の整理と小規模な検証（PoC）から、業務特化型AIシステム開発、業務自動化・システム連携、生成AIの社内活用、運用・保守、Webシステム開発までを支援します。要件が固まっていない段階からご相談いただけます。
+
+## Pages (Japanese; English equivalents under https://kaikk.jp/en)
+
+- [ホーム](https://kaikk.jp/): Overview, approach and FAQ
+- [事業内容 (Services)](https://kaikk.jp/services): AI introduction (PoC), custom AI systems, operations & maintenance, web systems, with deliverables for each
+- [中小企業のAI導入支援 (AI adoption for SMEs)](https://kaikk.jp/solutions/ai-adoption): How to choose a first workflow, run a PoC and decide on rollout
+- [業務自動化・システム連携 (Business automation)](https://kaikk.jp/solutions/business-automation): Automating data entry, reporting and notifications while keeping existing tools
+- [生成AIの社内活用支援 (Generative AI at work)](https://kaikk.jp/solutions/generative-ai): Internal document search (RAG), drafted replies, data-handling rules
+- [導入の流れ (Process)](https://kaikk.jp/process): Six steps from inquiry to operation; cost, contracts and NDA
+- [会社概要 (Company)](https://kaikk.jp/company): Registered company details and founder background with sources
+- [お問い合わせ (Contact)](https://kaikk.jp/contact): Inquiry form (sent to KAI, with a reference number; email draft fallback to info@kaikk.jp)
+- [個人情報の取扱い (Privacy Policy)](https://kaikk.jp/privacy): What the form collects, storage, retention and requests
+
+## Company facts
+
+- Legal name: KAI株式会社 (English: KAI Inc.)
+- Corporate Number (法人番号): 1010001262744 — https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=1010001262744
+- Incorporated: 2026-02-05
+- Capital: JPY 5,000,000
+- Representative Director: PHAM MINH TRI
+- Address: Toho Hibiya Promenade Building 11F, 1-5-2 Yurakucho, Chiyoda-ku, Tokyo 100-0006, Japan
+- Email: info@kaikk.jp
+- Languages: Japanese, English
+
+## Notes for accurate citation
+
+- KAI was founded in 2026 and has not published client case studies, client names or results.
+- The founder's prior work (KardiaChain co-founder in 2018; co-inventor on Vietnam patent 1-0053047) is personal background, not KAI client work.
+- Prices and timelines are quoted only after requirements are reviewed; the site lists no fixed prices.

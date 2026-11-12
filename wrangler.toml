@@ -1,0 +1,26 @@
+# Cloudflare Pages configuration for kaikk.jp (project "kaikk-jp", direct upload).
+# This file is the source of truth for bindings once deployed: a deployment from
+# a non-production branch sets the configuration for all preview deployments;
+# a production deployment (--branch main) sets production. See docs/inquiry-backend.md.
+name = "kaikk-jp"
+pages_build_output_dir = "out"
+compatibility_date = "2026-11-01"
+
+# Inquiry storage. The database id is an identifier, not a secret.
+[[d1_databases]]
+binding = "DB"
+database_name = "kaikk-inquiries"
+database_id = "69754064-3bf1-493a-8721-2e2f0d994c42"
+migrations_dir = "migrations"
+
+# Secrets are NOT in this file. They are set per environment in Pages:
+#   TURNSTILE_SECRET (required)  npx wrangler pages secret put TURNSTILE_SECRET --project-name kaikk-jp [--env preview]
+#   IP_HASH_SALT     (optional)  same command; falls back to TURNSTILE_SECRET as the HMAC key
+
+# Email notification to info@kaikk.jp — DISABLED until the account is on Workers Paid.
+# Pages Functions cannot hold a send_email binding directly, so a small Worker
+# (workers/inquiry-mailer) holds it and Pages calls it through a service binding
+# named EMAIL. To enable: deploy that Worker, uncomment the three lines below, redeploy.
+# [[services]]
+# binding = "EMAIL"
+# service = "kaikk-inquiry-mailer"
