@@ -4,9 +4,9 @@ Backlog of improvements that could not be done in code alone (accounts, services
 
 ## High impact
 
-1. **Google Search Console + Bing Webmaster Tools** — verify kaikk.co.jp ownership, submit `https://kaikk.co.jp/sitemap.xml`. Without this, indexing is slow and invisible. Bing powers ChatGPT search — matters for GEO too.
-2. **Google Business Profile** — register 株式会社KAI at the Yurakucho address. Biggest lever for local ("geo") searches like「AI開発 東京」and Google Maps visibility. Needs postcard/phone verification at the office.
-3. **Contact form backend** — current form posts to `mailto:`, which silently fails in most browsers. Static export has no server, so use Formspree, Basin, or a small Cloudflare Worker/API endpoint. A broken contact form loses every lead SEO wins.
+1. **Google Search Console + Bing Webmaster Tools** — verify kaikk.jp ownership (DNS TXT on Cloudflare), submit `https://kaikk.jp/sitemap.xml`. Without this, indexing is slow and invisible. Bing powers ChatGPT search — matters for GEO too.
+2. **Google Business Profile** — register KAI株式会社 at the Yurakucho address (requires receiving Google verification at that address). Biggest lever for local ("geo") searches like「AI開発 東京」and Google Maps visibility. Needs postcard/phone verification at the office.
+3. **Contact form backend** — the form prepares an email draft (mailto plus Gmail/Outlook webmail fallbacks and copy). It is honest but still depends on the visitor's mail setup. Static export has no server, so use Formspree, Basin, or a small Cloudflare Worker/API endpoint. A broken contact form loses every lead SEO wins.
 4. **Content/blog section** — the single biggest ongoing SEO+GEO lever. Case studies (導入事例) and short articles targeting queries like「中小企業 AI導入 補助金」「業務自動化 事例」. AI engines cite pages with concrete, factual content.
 
 ## Medium impact
@@ -22,11 +22,11 @@ Backlog of improvements that could not be done in code alone (accounts, services
 
 11. **Backlinks & citations** — Japanese business directories, PR TIMES press release for company founding, partner sites, 法人番号公表サイト presence. Consistent NAP (name/address) everywhere.
 12. **IndexNow** — instant Bing/Naver indexing on deploy; small script in CI.
-13. **Hosting-level canonicalization** — 301 www→apex (or reverse), enforce https, correct 404 handling for the static export at whatever host serves kaikk.co.jp (currently a domain/host decision, not repo code).
-14. **FAQ section + FAQPage schema** — real customer questions (料金、開発期間、補助金対応…) on services or a dedicated page. Good for both featured snippets and AI answers.
+13. **Hosting-level canonicalization** — 301 www→apex (or reverse), enforce https, correct 404 handling for the static export at the host serving kaikk.jp. `out/404.html` is now a complete bilingual document (currently a domain/host decision, not repo code).
+14. ~~FAQ section + FAQPage schema~~ — done on the home page and each /solutions page (feat/conversion). Google shows FAQ rich results only for authoritative government/health sites since 2023, so expect GEO/answer-engine value rather than SERP snippets.
 15. **Case-study rich results** — once 導入事例 exist, mark up with appropriate schema.
 16. **Multilingual expansion of llms.txt** — keep `public/llms.txt` updated as pages/services change; consider llms-full.txt with page contents.
 
 ## Assumption made in code
 
-- Production URL assumed to be `https://kaikk.co.jp` (from info@kaikk.co.jp). If the site will live on `www.kaikk.co.jp` or another domain, change `SITE_URL` in `src/lib/site.ts`.
+- Production URL is `https://kaikk.jp` (Director confirmed there is no kaikk.co.jp). If the domain changes, change `SITE_URL` in `src/lib/site.ts`.

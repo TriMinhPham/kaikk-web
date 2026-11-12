@@ -1,0 +1,63 @@
+{
+  "ja": {
+    "topicPreselected": "生成AIの社内活用",
+    "bogusTopicIgnored": true,
+    "emptyBlocked": true,
+    "urlAfterSubmit": "/contact?topic=%3Cbogus%3E",
+    "status": "メールの下書きを作成しました。メールアプリで内容をご確認のうえ、送信してください。",
+    "panel": "この時点では、お問い合わせはまだ送信されていません。\n\nメールアプリが開かない場合は、Webメールで同じ下書きを開けます。\n\nGmailで下書きを開く\n↗\nOutlook（Microsoft 365）で下書きを開く\n↗",
+    "panelFocused": true,
+    "gmail": {
+      "to": "info@kaikk.jp",
+      "su": "【業務自動化・システム連携】KAIへのお問い合わせ: 山田 太郎",
+      "bodyHasMessage": true
+    },
+    "copyStatus": "コピーしました。メールに貼り付けて送信してください。",
+    "clipboard": "info@kaikk.jp\n【業務自動化・システム連携】KAIへのお問い合わせ: 山田 太郎\n\n会社名: （未記入）\nご担当者名: 山田 太郎\nメールアドレス: test@example.com\nご相談の種類: 業務自動化・システム連携\n\n毎週の集計を自動化したいです。",
+    "axeAfterSubmit": [],
+    "errors": []
+  },
+  "en": {
+    "topicPreselected": "Generative AI at work",
+    "bogusTopicIgnored": true,
+    "emptyBlocked": true,
+    "urlAfterSubmit": "/en/contact?topic=%3Cbogus%3E",
+    "status": "Your email draft is ready. Review it in your email app and press send.",
+    "panel": "Your inquiry has not been sent yet.\n\nIf no email app opened, open the same draft in webmail.\n\nOpen draft in Gmail\n↗\nOpen draft in Outlook (Microsoft 365)\n↗",
+    "panelFocused": true,
+    "gmail": {
+      "to": "info@kaikk.jp",
+      "su": "[Business automation / integration] Project inquiry to KAI: Sam Lee",
+      "bodyHasMessage": true
+    },
+    "copyStatus": "Copied. Paste into your email and send it when ready.",
+    "clipboard": "info@kaikk.jp\n[Business automation / integration] Project inquiry to KAI: Sam Lee\n\nCompany: (not provided)\nName: Sam Lee\nEmail: test@example.com\nTopic: Business automation / integration\n\nWe want to automate weekly reports.",
+    "axeAfterSubmit": [],
+    "errors": []
+  },
+  "noJs": {
+    "action": "mailto:info@kaikk.jp",
+    "method": "POST",
+    "enctype": "text/plain",
+    "radios": 5,
+    "heroVisible": true
+  },
+  "noJsHome": {
+    "h1": "定型業務を、\nAIで軽く。",
+    "faq": 4,
+    "img": true
+  },
+  "solutionPage": {
+    "menuOpened": true,
+    "menuClosed": true,
+    "faqOpen": true,
+    "enSwitchHref": "/en/solutions/business-automation",
+    "ctaLandsOn": "/contact?topic=business-automation",
+    "ctaTopic": "業務自動化・システム連携"
+  },
+  "notFound": {
+    "lang": "ja",
+    "h1": "ページが見つかりません",
+    "axe": []
+  }
+}

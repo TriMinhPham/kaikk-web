@@ -1,0 +1,1322 @@
+[
+  {
+    "route": "/",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "description": "KAI株式会社は、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援・業務自動化システムの設計から構築まで段階的な導入を支援します。",
+    "canonical": "https://kaikk.jp/",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI株式会社｜AI・ITシステム開発",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "AIを、事業の / 確かな力に。"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": {
+      "text": "お問い合わせ\n↗",
+      "bottom": 562,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "536x470"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-ja-home-1440.png"
+  },
+  {
+    "route": "/services",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "事業内容｜KAI株式会社",
+    "description": "KAI株式会社の事業内容のご案内。AI導入支援（PoC）、業務特化型AIシステム開発、運用・保守サポート、Webシステム開発を提供しています。",
+    "canonical": "https://kaikk.jp/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "事業内容｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "事業内容"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-services-1440.png"
+  },
+  {
+    "route": "/process",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "導入の流れ｜KAI株式会社",
+    "description": "KAI株式会社におけるシステム導入の流れをご紹介。お問い合わせからヒアリング、お見積り、PoC、本格開発、納品・運用開始までの6ステップです。",
+    "canonical": "https://kaikk.jp/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "導入の流れ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "導入の流れ"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-process-1440.png"
+  },
+  {
+    "route": "/company",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "会社概要｜KAI株式会社",
+    "description": "KAI株式会社の会社概要。東京都千代田区有楽町を拠点に、AIシステム開発・業務自動化システム開発・Webシステム開発を行っています。",
+    "canonical": "https://kaikk.jp/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "会社概要｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "会社概要"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-company-1440.png"
+  },
+  {
+    "route": "/contact",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "お問い合わせ｜KAI株式会社",
+    "description": "KAI株式会社へのお問い合わせ。AI導入・業務自動化・Webシステム開発のご相談を承ります。要件が未定でもご相談いただけます。",
+    "canonical": "https://kaikk.jp/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "お問い合わせ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "お問い合わせ"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-contact-1440.png"
+  },
+  {
+    "route": "/en",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "description": "KAI Inc. is a Tokyo-based AI & IT development company providing AI implementation and business automation services for small and medium-sized enterprises.",
+    "canonical": "https://kaikk.jp/en",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Make AI work. / For your business."
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": {
+      "text": "Contact\n↗",
+      "bottom": 543,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "536x470"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-1440.png"
+  },
+  {
+    "route": "/en/services",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "Services | KAI Inc.",
+    "description": "Services offered by KAI Inc.: AI introduction (PoC), custom AI system development, operations & maintenance, and web system development.",
+    "canonical": "https://kaikk.jp/en/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "Services | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Services"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-services-1440.png"
+  },
+  {
+    "route": "/en/process",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "Process | KAI Inc.",
+    "description": "How projects run at KAI Inc.: inquiry, requirement discussion, proposal and quotation, optional PoC, full development, then delivery and operation.",
+    "canonical": "https://kaikk.jp/en/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "Process | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Project Flow"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-process-1440.png"
+  },
+  {
+    "route": "/en/company",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "Company | KAI Inc.",
+    "description": "Company profile of KAI Inc., an AI & IT development company based in Yurakucho, Chiyoda-ku, Tokyo.",
+    "canonical": "https://kaikk.jp/en/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "Company | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Company Profile"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-company-1440.png"
+  },
+  {
+    "route": "/en/contact",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "status": 200,
+    "title": "Contact | KAI Inc.",
+    "description": "Contact KAI Inc. about AI implementation, business automation, or web system development. Start with your business problem, even before defining requirements.",
+    "canonical": "https://kaikk.jp/en/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "Contact | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Contact"
+    ],
+    "scrollWidth": 1440,
+    "width": 1440,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-contact-1440.png"
+  },
+  {
+    "route": "/",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "description": "KAI株式会社は、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援・業務自動化システムの設計から構築まで段階的な導入を支援します。",
+    "canonical": "https://kaikk.jp/",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI株式会社｜AI・ITシステム開発",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "AIを、事業の / 確かな力に。"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": {
+      "text": "お問い合わせ\n↗",
+      "bottom": 434,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "342x260"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-ja-home-390.png"
+  },
+  {
+    "route": "/services",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "事業内容｜KAI株式会社",
+    "description": "KAI株式会社の事業内容のご案内。AI導入支援（PoC）、業務特化型AIシステム開発、運用・保守サポート、Webシステム開発を提供しています。",
+    "canonical": "https://kaikk.jp/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "事業内容｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "事業内容"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-services-390.png"
+  },
+  {
+    "route": "/process",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "導入の流れ｜KAI株式会社",
+    "description": "KAI株式会社におけるシステム導入の流れをご紹介。お問い合わせからヒアリング、お見積り、PoC、本格開発、納品・運用開始までの6ステップです。",
+    "canonical": "https://kaikk.jp/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "導入の流れ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "導入の流れ"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-process-390.png"
+  },
+  {
+    "route": "/company",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "会社概要｜KAI株式会社",
+    "description": "KAI株式会社の会社概要。東京都千代田区有楽町を拠点に、AIシステム開発・業務自動化システム開発・Webシステム開発を行っています。",
+    "canonical": "https://kaikk.jp/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "会社概要｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "会社概要"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-company-390.png"
+  },
+  {
+    "route": "/contact",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "お問い合わせ｜KAI株式会社",
+    "description": "KAI株式会社へのお問い合わせ。AI導入・業務自動化・Webシステム開発のご相談を承ります。要件が未定でもご相談いただけます。",
+    "canonical": "https://kaikk.jp/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "お問い合わせ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "お問い合わせ"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-contact-390.png"
+  },
+  {
+    "route": "/en",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "description": "KAI Inc. is a Tokyo-based AI & IT development company providing AI implementation and business automation services for small and medium-sized enterprises.",
+    "canonical": "https://kaikk.jp/en",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Make AI work. / For your business."
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": {
+      "text": "Contact\n↗",
+      "bottom": 424,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "342x260"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-390.png"
+  },
+  {
+    "route": "/en/services",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "Services | KAI Inc.",
+    "description": "Services offered by KAI Inc.: AI introduction (PoC), custom AI system development, operations & maintenance, and web system development.",
+    "canonical": "https://kaikk.jp/en/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "Services | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Services"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-services-390.png"
+  },
+  {
+    "route": "/en/process",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "Process | KAI Inc.",
+    "description": "How projects run at KAI Inc.: inquiry, requirement discussion, proposal and quotation, optional PoC, full development, then delivery and operation.",
+    "canonical": "https://kaikk.jp/en/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "Process | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Project Flow"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-process-390.png"
+  },
+  {
+    "route": "/en/company",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "Company | KAI Inc.",
+    "description": "Company profile of KAI Inc., an AI & IT development company based in Yurakucho, Chiyoda-ku, Tokyo.",
+    "canonical": "https://kaikk.jp/en/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "Company | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Company Profile"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-company-390.png"
+  },
+  {
+    "route": "/en/contact",
+    "viewport": [
+      390,
+      844
+    ],
+    "status": 200,
+    "title": "Contact | KAI Inc.",
+    "description": "Contact KAI Inc. about AI implementation, business automation, or web system development. Start with your business problem, even before defining requirements.",
+    "canonical": "https://kaikk.jp/en/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "Contact | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Contact"
+    ],
+    "scrollWidth": 390,
+    "width": 390,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-contact-390.png"
+  },
+  {
+    "route": "/",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "KAI株式会社｜AI・ITシステム開発",
+    "description": "KAI株式会社は、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援・業務自動化システムの設計から構築まで段階的な導入を支援します。",
+    "canonical": "https://kaikk.jp/",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI株式会社｜AI・ITシステム開発",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "AIを、事業の / 確かな力に。"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": {
+      "text": "お問い合わせ\n↗",
+      "bottom": 417,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "272x260"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-ja-home-320.png"
+  },
+  {
+    "route": "/services",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "事業内容｜KAI株式会社",
+    "description": "KAI株式会社の事業内容のご案内。AI導入支援（PoC）、業務特化型AIシステム開発、運用・保守サポート、Webシステム開発を提供しています。",
+    "canonical": "https://kaikk.jp/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "事業内容｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "事業内容"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-services-320.png"
+  },
+  {
+    "route": "/process",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "導入の流れ｜KAI株式会社",
+    "description": "KAI株式会社におけるシステム導入の流れをご紹介。お問い合わせからヒアリング、お見積り、PoC、本格開発、納品・運用開始までの6ステップです。",
+    "canonical": "https://kaikk.jp/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "導入の流れ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "導入の流れ"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-process-320.png"
+  },
+  {
+    "route": "/company",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "会社概要｜KAI株式会社",
+    "description": "KAI株式会社の会社概要。東京都千代田区有楽町を拠点に、AIシステム開発・業務自動化システム開発・Webシステム開発を行っています。",
+    "canonical": "https://kaikk.jp/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "会社概要｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "会社概要"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-company-320.png"
+  },
+  {
+    "route": "/contact",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "お問い合わせ｜KAI株式会社",
+    "description": "KAI株式会社へのお問い合わせ。AI導入・業務自動化・Webシステム開発のご相談を承ります。要件が未定でもご相談いただけます。",
+    "canonical": "https://kaikk.jp/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "お問い合わせ｜KAI株式会社",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "お問い合わせ"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-contact-320.png"
+  },
+  {
+    "route": "/en",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "description": "KAI Inc. is a Tokyo-based AI & IT development company providing AI implementation and business automation services for small and medium-sized enterprises.",
+    "canonical": "https://kaikk.jp/en",
+    "hreflang": [
+      "ja=https://kaikk.jp/",
+      "en=https://kaikk.jp/en",
+      "x-default=https://kaikk.jp/"
+    ],
+    "ogTitle": "KAI Inc. | AI & IT Systems Development in Tokyo",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Make AI work. / For your business."
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": {
+      "text": "Contact\n↗",
+      "bottom": 419,
+      "visible": true
+    },
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      },
+      {
+        "src": "/images/tokyo.jpg",
+        "loaded": true,
+        "natural": "1400x932",
+        "rendered": "272x260"
+      }
+    ],
+    "internalLinks": 7,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-320.png"
+  },
+  {
+    "route": "/en/services",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "Services | KAI Inc.",
+    "description": "Services offered by KAI Inc.: AI introduction (PoC), custom AI system development, operations & maintenance, and web system development.",
+    "canonical": "https://kaikk.jp/en/services",
+    "hreflang": [
+      "ja=https://kaikk.jp/services",
+      "en=https://kaikk.jp/en/services",
+      "x-default=https://kaikk.jp/services"
+    ],
+    "ogTitle": "Services | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Services"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-services-320.png"
+  },
+  {
+    "route": "/en/process",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "Process | KAI Inc.",
+    "description": "How projects run at KAI Inc.: inquiry, requirement discussion, proposal and quotation, optional PoC, full development, then delivery and operation.",
+    "canonical": "https://kaikk.jp/en/process",
+    "hreflang": [
+      "ja=https://kaikk.jp/process",
+      "en=https://kaikk.jp/en/process",
+      "x-default=https://kaikk.jp/process"
+    ],
+    "ogTitle": "Process | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Project Flow"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 1,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-process-320.png"
+  },
+  {
+    "route": "/en/company",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "Company | KAI Inc.",
+    "description": "Company profile of KAI Inc., an AI & IT development company based in Yurakucho, Chiyoda-ku, Tokyo.",
+    "canonical": "https://kaikk.jp/en/company",
+    "hreflang": [
+      "ja=https://kaikk.jp/company",
+      "en=https://kaikk.jp/en/company",
+      "x-default=https://kaikk.jp/company"
+    ],
+    "ogTitle": "Company | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Company Profile"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-company-320.png"
+  },
+  {
+    "route": "/en/contact",
+    "viewport": [
+      320,
+      740
+    ],
+    "status": 200,
+    "title": "Contact | KAI Inc.",
+    "description": "Contact KAI Inc. about AI implementation, business automation, or web system development. Start with your business problem, even before defining requirements.",
+    "canonical": "https://kaikk.jp/en/contact",
+    "hreflang": [
+      "ja=https://kaikk.jp/contact",
+      "en=https://kaikk.jp/en/contact",
+      "x-default=https://kaikk.jp/contact"
+    ],
+    "ogTitle": "Contact | KAI Inc.",
+    "ogImage": "https://kaikk.jp/og.png",
+    "h1": [
+      "Contact"
+    ],
+    "scrollWidth": 320,
+    "width": 320,
+    "primaryCta": null,
+    "jsonLdTypes": [
+      "Organization",
+      "ProfessionalService",
+      "WebSite"
+    ],
+    "images": [
+      {
+        "src": "/wordmark_kai.svg",
+        "loaded": true,
+        "natural": "234x150",
+        "rendered": "44x28"
+      }
+    ],
+    "internalLinks": 0,
+    "overflow": false,
+    "axe": [],
+    "consoleErrors": [],
+    "screenshot": "before-en-contact-320.png"
+  }
+]
