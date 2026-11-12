@@ -4,12 +4,19 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 class Handler(SimpleHTTPRequestHandler):
-    def do_GET(self):
+    def _rewrite(self):
         path = self.path.split('?', 1)[0]
         candidate = Path(self.translate_path(path))
         if not Path(path).suffix and candidate.with_suffix('.html').is_file():
             self.path = path + '.html'
+
+    def do_GET(self):
+        self._rewrite()
         super().do_GET()
+
+    def do_HEAD(self):
+        self._rewrite()
+        super().do_HEAD()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
