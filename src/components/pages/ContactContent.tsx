@@ -1,104 +1,46 @@
-import { content, Locale } from "@/lib/content";
-import FadeIn from "@/components/FadeIn";
+"use client";
 
-const inputClass =
-  "w-full rounded-lg border border-edge bg-surface px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary";
+import { useState, type FormEvent } from "react";
+import { content, type Locale } from "@/lib/content";
+import { marketing } from "@/lib/marketing";
+import { buildInquiry, CONTACT_EMAIL, type Inquiry } from "@/lib/inquiry";
 
 export default function ContactContent({ locale }: { locale: Locale }) {
   const t = content[locale].contact;
-
+  const m = marketing[locale];
+  const [values, setValues] = useState<Inquiry>({ company: "", name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const draft = buildInquiry(values, locale);
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus(m.draftReady);
+    // The user must complete sending in their own mail client. Never claim delivery.
+    window.location.href = draft.href;
+  }
+  async function copy() {
+    try { await navigator.clipboard.writeText(draft.body); setStatus(m.copied); }
+    catch { setPreviewOpen(true); setStatus(m.copyFailed); }
+  }
   return (
     <>
-      {/* Page header */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <FadeIn>
-            <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
-              {t.title}
-            </h1>
-            <p className="text-ink-muted">{t.subtitle}</p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Contact form */}
-      <section className="pb-20">
-        <div className="mx-auto max-w-xl px-6">
-          <FadeIn>
-            <div className="rounded-2xl bg-surface-card p-8 shadow-sm">
-              <form
-                action="mailto:info@kaikk.co.jp"
-                method="POST"
-                encType="text/plain"
-                className="space-y-5"
-              >
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium">
-                    {t.fields.companyName}
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    required
-                    className={inputClass}
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium">
-                    {t.fields.contactPerson}
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className={inputClass}
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium">
-                    {t.fields.email}
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className={inputClass}
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium">
-                    {t.fields.message}
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={6}
-                    required
-                    className={inputClass}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn-press w-full rounded-full bg-primary px-8 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary-hover hover:shadow-md"
-                >
-                  {t.submit}
-                </button>
-              </form>
-
-              <p className="mt-6 text-center text-xs text-ink-muted">
-                Email:{" "}
-                <a
-                  href="mailto:info@kaikk.co.jp"
-                  className="text-primary hover:underline"
-                >
-                  info@kaikk.co.jp
-                </a>
-              </p>
-            </div>
-          </FadeIn>
+      <section className="page-heading site-width"><p className="eyebrow">{m.ctaLabel}</p><h1>{t.title}</h1><p>{m.contactIntro}</p></section>
+      <section className="contact-layout site-width">
+        <aside className="contact-guide"><h2>{m.contactGuide}</h2><ul>{m.contactPoints.map(point => <li key={point}>{point}</li>)}</ul><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></aside>
+        <div>
+          <form className="inquiry-form" action={`mailto:${CONTACT_EMAIL}`} method="POST" encType="text/plain" onSubmit={submit}>
+            {([
+              { key: "company", label: t.fields.companyName, type: "text", autoComplete: "organization" },
+              { key: "name", label: t.fields.contactPerson, type: "text", autoComplete: "name" },
+              { key: "email", label: t.fields.email, type: "email", autoComplete: "email" },
+            ] as const).map(field => <div key={field.key}><label htmlFor={`inquiry-${field.key}`}>{field.label}</label><input id={`inquiry-${field.key}`} name={field.key} type={field.type} required autoComplete={field.autoComplete} maxLength={field.key === "email" ? 254 : 160} value={values[field.key]} onChange={event => setValues({ ...values, [field.key]: event.target.value })} /></div>)}
+            <div><label htmlFor="inquiry-message">{t.fields.message}</label><textarea id="inquiry-message" name="message" rows={6} required maxLength={3000} placeholder={m.messagePlaceholder} value={values.message} onChange={event => setValues({ ...values, message: event.target.value })} /></div>
+            <p className="form-notice" id="inquiry-notice">{m.contactPrivacy}</p>
+            <div className="form-actions"><button className="button-primary" type="submit" aria-describedby="inquiry-notice">{m.openEmail}<span aria-hidden="true">↗</span></button><button className="text-link" type="button" onClick={copy}>{m.copy}</button></div>
+          </form>
+          <p role="status" className="form-status">{status}</p>
+          <details className="draft-preview" open={previewOpen} onToggle={event => setPreviewOpen(event.currentTarget.open)}><summary>{m.preview}</summary><pre>{draft.body}</pre></details>
+          <noscript><p className="form-notice"><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p></noscript>
         </div>
       </section>
     </>

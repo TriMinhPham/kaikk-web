@@ -102,7 +102,7 @@ const buildOrder = [
 
 function CodeBlock({ children }: { children: string }) {
   return (
-    <pre className="overflow-x-auto rounded-lg border border-edge bg-surface p-4 text-xs leading-relaxed text-ink md:text-sm">
+    <pre tabIndex={0} className="overflow-x-auto rounded-lg border border-edge bg-surface p-4 text-xs leading-relaxed text-ink md:text-sm">
       <code>{children}</code>
     </pre>
   );

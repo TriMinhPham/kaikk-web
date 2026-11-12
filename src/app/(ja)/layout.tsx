@@ -5,15 +5,15 @@ import { pageAlternates, siteJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    default: "株式会社KAI｜AI・ITシステム開発",
-    template: "%s｜株式会社KAI",
+    default: "KAI株式会社｜AI・ITシステム開発",
+    template: "%s｜KAI株式会社",
   },
   description:
-    "株式会社KAIは、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援・業務自動化システムの設計から構築まで段階的な導入を支援します。",
+    "KAI株式会社は、東京都を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援・業務自動化システムの設計から構築まで段階的な導入を支援します。",
   alternates: pageAlternates("", "ja"),
   openGraph: {
     type: "website",
-    siteName: "株式会社KAI",
+    siteName: "KAI株式会社",
     locale: "ja_JP",
     alternateLocale: "en_US",
     images: [
@@ -39,8 +39,9 @@ export default function JaLayout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd("ja")) }}
         />
+        <a href="#main-content" className="skip-link">本文へスキップ</a>
         <Header locale="ja" />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer locale="ja" />
       </body>
     </html>

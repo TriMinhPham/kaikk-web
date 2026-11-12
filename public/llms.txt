@@ -1,25 +1,25 @@
-# 株式会社KAI (KAI Inc.)
+# KAI株式会社 (KAI Inc.)
 
 > Tokyo-based AI & IT development company. We provide AI implementation support (PoC), custom AI system development, business automation, operations & maintenance, and web system development for small and medium-sized enterprises in Japan. Japanese and English supported.
 
-株式会社KAIは、東京都千代田区有楽町を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援（PoC）から業務特化型AIシステム開発、運用・保守、Webシステム開発までを提供しています。
+KAI株式会社は、東京都千代田区有楽町を拠点とするAI・ITシステム開発会社です。中小企業様向けに、AI導入支援（PoC）から業務特化型AIシステム開発、運用・保守、Webシステム開発までを提供しています。
 
 ## Pages
 
-- [ホーム (Home, Japanese)](https://kaikk.co.jp/): Company overview and services summary
-- [事業内容 (Services)](https://kaikk.co.jp/services): AI introduction (PoC), custom AI systems, operations & maintenance, web development
-- [導入の流れ (Process)](https://kaikk.co.jp/process): 6-step project flow from inquiry to delivery
-- [会社概要 (Company)](https://kaikk.co.jp/company): Company profile and registered address
-- [お問い合わせ (Contact)](https://kaikk.co.jp/contact): Contact form and email
-- [English site](https://kaikk.co.jp/en): All pages available in English under /en
+- [ホーム (Home, Japanese)](https://kaikk.jp/): Company overview and services summary
+- [事業内容 (Services)](https://kaikk.jp/services): AI introduction (PoC), custom AI systems, operations & maintenance, web development
+- [導入の流れ (Process)](https://kaikk.jp/process): 6-step project flow from inquiry to delivery
+- [会社概要 (Company)](https://kaikk.jp/company): Company profile and registered address
+- [お問い合わせ (Contact)](https://kaikk.jp/contact): Contact form and email
+- [English site](https://kaikk.jp/en): All pages available in English under /en
 
 ## Company facts
 
-- Legal name: 株式会社KAI (English: KAI Inc.)
+- Legal name: KAI株式会社 (English: KAI Inc.)
 - Founded: 2026
 - Capital: JPY 5,000,000
 - Representative Director: Pham Minh Tri
 - Address: Toho Hibiya Promenade Building 11F, 1-5-2 Yurakucho, Chiyoda-ku, Tokyo 100-0006, Japan
-- Email: info@kaikk.co.jp
+- Email: info@kaikk.jp
 - Business: AI systems development, business automation systems, web systems development
 - Languages: Japanese, English

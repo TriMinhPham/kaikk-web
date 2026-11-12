@@ -39,8 +39,9 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd("en")) }}
         />
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header locale="en" />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer locale="en" />
       </body>
     </html>

@@ -1,8 +1,8 @@
 # kaikk-web
 
-Corporate website for 株式会社KAI (KAI Inc.) — a Tokyo-based AI & IT systems development company.
+Corporate website for KAI株式会社 (KAI Inc.) — a Tokyo-based AI & IT systems development company.
 
-- Production: https://kaikk.co.jp
+- Production: https://kaikk.jp
 - Stack: Next.js (App Router, static export), React, Tailwind CSS v4, TypeScript
 - Locales: Japanese (default, `/`) and English (`/en`)
 

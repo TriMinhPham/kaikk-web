@@ -5,7 +5,7 @@ import { pageAlternates } from "@/lib/site";
 export const metadata: Metadata = {
   title: "事業内容",
   description:
-    "株式会社KAIの事業内容のご案内。AI導入支援（PoC）、業務特化型AIシステム開発、運用・保守サポート、Webシステム開発を提供しています。",
+    "KAI株式会社の事業内容のご案内。AI導入支援（PoC）、業務特化型AIシステム開発、運用・保守サポート、Webシステム開発を提供しています。",
   alternates: pageAlternates("/services", "ja"),
 };
 
