@@ -3,6 +3,7 @@ import { content, type Locale } from "@/lib/content";
 import { CONTACT_EMAIL } from "@/lib/inquiry";
 import { solutions, solutionSlugs } from "@/lib/solutions";
 import { CORPORATE_NUMBER } from "@/lib/site";
+import { privacy } from "@/lib/privacy";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Footer({ locale }: { locale: Locale }) {
@@ -26,6 +27,7 @@ export default function Footer({ locale }: { locale: Locale }) {
               <Link href={`${prefix}/process`}>{nav.process}</Link>
               <Link href={`${prefix}/company`}>{nav.company}</Link>
               <Link href={`${prefix}/contact`}>{nav.contact}</Link>
+              <Link href={`${prefix}/privacy`}>{privacy[locale].navLabel}</Link>
               <span><LocaleSwitcher locale={locale} linkClass="hover:text-primary" activeClass="text-ink" /></span>
             </nav>
             <nav className="footer-nav" aria-label={ja ? "課題別のご案内" : "Solutions"}>

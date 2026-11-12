@@ -13,7 +13,8 @@ KAI株式会社は、東京都千代田区有楽町を拠点とするAI・ITシ�
 - [生成AIの社内活用支援 (Generative AI at work)](https://kaikk.jp/solutions/generative-ai): Internal document search (RAG), drafted replies, data-handling rules
 - [導入の流れ (Process)](https://kaikk.jp/process): Six steps from inquiry to operation; cost, contracts and NDA
 - [会社概要 (Company)](https://kaikk.jp/company): Registered company details and founder background with sources
-- [お問い合わせ (Contact)](https://kaikk.jp/contact): Inquiry form that prepares an email draft to info@kaikk.jp
+- [お問い合わせ (Contact)](https://kaikk.jp/contact): Inquiry form (sent to KAI, with a reference number; email draft fallback to info@kaikk.jp)
+- [個人情報の取扱い (Privacy Policy)](https://kaikk.jp/privacy): What the form collects, storage, retention and requests
 
 ## Company facts
 

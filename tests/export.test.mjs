@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 
 const out = resolve('out');
 const solutionPaths = ['/solutions/ai-adoption', '/solutions/business-automation', '/solutions/generative-ai'];
-const basePaths = ['/', '/services', '/process', '/company', '/contact', ...solutionPaths];
+const basePaths = ['/', '/services', '/process', '/company', '/contact', ...solutionPaths, '/privacy'];
 const routes = [...basePaths, ...basePaths.map(p => (p === '/' ? '/en' : `/en${p}`))];
 const read = route => readFileSync(resolve(out, route === '/' ? 'index.html' : `${route.slice(1)}.html`), 'utf8');
 const jsonLd = html => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
@@ -37,7 +37,8 @@ for (const route of routes) {
       assert.equal(crumbs.itemListElement.at(-1).item, url);
       crumbs.itemListElement.forEach((item, i) => assert.equal(item.position, i + 1));
     }
-    if (!route.endsWith('/contact')) assert.ok(/href="(\/en)?\/contact(\?topic=[a-z-]+)?"[^>]*class="button-primary"|class="button-primary"[^>]*href="(\/en)?\/contact/.test(html), 'primary CTA to contact');
+    assert.ok(html.includes(`href="${route.startsWith('/en') ? '/en' : ''}/privacy"`), 'footer privacy link');
+    if (!route.endsWith('/contact') && !route.endsWith('/privacy')) assert.ok(/href="(\/en)?\/contact(\?topic=[a-z-]+)?"[^>]*class="button-primary"|class="button-primary"[^>]*href="(\/en)?\/contact/.test(html), 'primary CTA to contact');
     if (route.endsWith('/contact')) {
       assert.ok(html.includes('action="mailto:info@kaikk.jp"'));
       assert.ok(html.includes('method="POST"'));
@@ -47,6 +48,10 @@ for (const route of routes) {
       assert.match(html, /id="inquiry-email"[^>]*required/);
       assert.doesNotMatch(html.match(/<input[^>]*id="inquiry-company"[^>]*>/)[0], /required/);
       assert.equal((html.match(/type="radio" name="topic"/g) || []).length, 5);
+      // Consent text links to the privacy policy; honeypot is hidden from assistive tech; old "nothing is sent" copy is gone.
+      assert.match(html, /id="inquiry-notice"[^>]*>[\s\S]*?href="(\/en)?\/privacy"/);
+      assert.match(html, /class="hp-field" aria-hidden="true"[\s\S]*?id="inquiry-website"[^>]*tabindex="-1"/i);
+      assert.doesNotMatch(html, /送信・保存されません|does not send or store/);
     }
   });
 }
@@ -133,4 +138,41 @@ test('expertise links remain evidence-based and distinguish prior founder work',
     assert.ok(html.includes('houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=1010001262744'), route);
   }
   assert.ok(ja.includes('受託実績'));
+});
+
+test('privacy policy pages state the retention period from config and the required APPI items', async () => {
+  const { INQUIRY_RETENTION_MONTHS } = await import('../src/lib/inquiry-rules.ts');
+  const ja = text(read('/privacy'));
+  const en = text(read('/en/privacy'));
+  assert.ok(ja.includes(`${INQUIRY_RETENTION_MONTHS}か月`));
+  assert.ok(en.includes(`${INQUIRY_RETENTION_MONTHS} months`));
+  for (const s of ['KAI株式会社', '有楽町一丁目5番2号', 'PHAM MINH TRI', 'info@kaikk.jp', '利用目的', 'Cloudflare Turnstile', 'Cloudflare Web Analytics', 'Google Workspace', '開示', '第三者']) assert.ok(ja.includes(s), s);
+  for (const s of ['KAI Inc.', '1-5-2 Yurakucho', 'PHAM MINH TRI', 'info@kaikk.jp', 'Cloudflare Turnstile', 'Cloudflare Web Analytics', 'Google Workspace', 'never sell', 'Japanese version prevails']) assert.ok(en.includes(s), s);
+});
+
+test('Turnstile is loaded only by the contact pages', () => {
+  const htmlFiles = routes.map(r => [r, read(r)]);
+  for (const [route, html] of htmlFiles) assert.doesNotMatch(html, /challenges\.cloudflare\.com/, `${route} html`);
+  const chunks = new Set();
+  for (const [, html] of htmlFiles) for (const m of html.matchAll(/\/_next\/static\/chunks\/([\w-]+\.js)/g)) chunks.add(m[1]);
+  const turnstileChunks = [...chunks].filter(c => readFileSync(resolve(out, '_next/static/chunks', c), 'utf8').includes('challenges.cloudflare.com/turnstile'));
+  assert.ok(turnstileChunks.length >= 1, 'a chunk loads Turnstile');
+  for (const [route, html] of htmlFiles) {
+    const uses = turnstileChunks.some(c => html.includes(c));
+    assert.equal(uses, route.endsWith('/contact'), route);
+  }
+});
+
+test('_headers: immutable caching for hashed assets and a CSP that allows Turnstile and Web Analytics', () => {
+  const headers = readFileSync(resolve(out, '_headers'), 'utf8');
+  assert.match(headers, /\/_next\/static\/\*\n\s+Cache-Control: public, max-age=31536000, immutable/);
+  const csp = headers.match(/Content-Security-Policy: (.+)/)[1];
+  const dir = name => csp.split(';').map(d => d.trim()).find(d => d.startsWith(`${name} `)) ?? '';
+  assert.match(dir('script-src'), /https:\/\/challenges\.cloudflare\.com/);
+  assert.match(dir('script-src'), /https:\/\/static\.cloudflareinsights\.com/);
+  assert.match(dir('frame-src'), /https:\/\/challenges\.cloudflare\.com/);
+  assert.match(dir('connect-src'), /'self'.*https:\/\/cloudflareinsights\.com/);
+  assert.match(dir('form-action'), /mailto:/, 'no-JS mailto fallback still allowed');
+  assert.match(dir('frame-ancestors'), /'none'/);
+  assert.equal(existsSync(resolve(out, '_redirects')), false);
 });

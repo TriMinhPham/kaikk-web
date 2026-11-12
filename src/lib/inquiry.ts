@@ -6,8 +6,9 @@ export type Inquiry = { company: string; name: string; email: string; message: s
 const oneLine = (value: string) => value.replace(/[\r\n]+/g, " ").trim();
 
 /**
- * Prepare a draft only. This static site does not send or store inquiries:
- * every href below opens a draft the visitor must review and send themselves.
+ * Email-draft fallback. The form normally sends through /api/inquiry; when that
+ * fails, or JavaScript is off, these hrefs open a draft the visitor reviews and
+ * sends themselves. Nothing here sends anything.
  */
 export function buildInquiry(values: Inquiry, locale: "ja" | "en") {
   const ja = locale === "ja";

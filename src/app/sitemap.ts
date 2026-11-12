@@ -5,7 +5,7 @@ import { solutionSlugs } from "@/lib/solutions";
 export const dynamic = "force-static";
 
 // Locale-agnostic paths. /isekai is an internal reference doc and stays out.
-const paths = ["", "/services", "/process", "/company", "/contact", ...solutionSlugs.map(slug => `/solutions/${slug}`)];
+const paths = ["", "/services", "/process", "/company", "/contact", ...solutionSlugs.map(slug => `/solutions/${slug}`), "/privacy"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) => {
@@ -17,13 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: ja,
         alternates,
         changeFrequency: "monthly" as const,
-        priority: path === "" ? 1 : 0.7,
+        priority: path === "" ? 1 : path === "/privacy" ? 0.3 : 0.7,
       },
       {
         url: en,
         alternates,
         changeFrequency: "monthly" as const,
-        priority: path === "" ? 0.8 : 0.6,
+        priority: path === "" ? 0.8 : path === "/privacy" ? 0.2 : 0.6,
       },
     ];
   });

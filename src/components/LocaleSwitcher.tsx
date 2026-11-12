@@ -13,6 +13,7 @@ const SHARED_PATHS = [
   "/company",
   "/contact",
   ...solutionSlugs.map(slug => `/solutions/${slug}`),
+  "/privacy",
 ];
 
 export default function LocaleSwitcher({
